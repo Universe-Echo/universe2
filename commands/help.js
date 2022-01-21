@@ -10,8 +10,8 @@ module.exports = {
         
             .setTitle('Prefix = un!')
             .setDescription('**Command categories :-**')
-            .addField('p!utility', 'for utility commands menu')
-            .addField('p!fun', 'for fun commands menu')
+            .addField('un!utility', 'for utility commands menu')
+            .addField('un!fun', 'for fun commands menu')
            
             .setFooter('Universe OP')
             .setColor('RANDOM')
