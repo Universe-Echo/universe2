@@ -14,12 +14,7 @@ client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
 
 
 
-client.on('messageCreate', message => {
-  if (message.content === 'hi') {
 
-    message.channel.send('hello');
-  }
-});
 
 client.on('message', gotmessage);
 
@@ -33,10 +28,12 @@ async function gotmessage(message) {
   message.reply('Just doing my job, wbu?')
 
   }
-  
+ else if (message.content === 'hi') {
+
+    message.channel.send('hello');
 
 }
-
+}
 const fs = require('fs');
 const message = require('./events/message');
 client.commands = new Discord.Collection();
