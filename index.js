@@ -34,21 +34,21 @@ const replie = [
 
 client.on('message', gotmessage);
 
-async function gotmessage(message) {
-  if (message.content === 'hlo') {
-    message.reply('hlu')
+async function gotmessage(msg) {
+  if (msg.content === 'hlo') {
+    msg.reply('hlu')
 
   }
 
-  else if (message.content === 'sup') {
-  message.reply('Just doing my job, wbu?')
+  else if (msg.content === 'sup') {
+  msg.reply('Just doing my job, wbu?')
 
   }
   
-  if (message.content === 'hello') {
+  if (msg.content === 'hello') {
     const r = Math.floor(Math.random() * replie.length);
 
-    message.reply(replie[r]);
+    msg.reply(replie[r]);
 }
 
 
