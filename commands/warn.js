@@ -16,9 +16,9 @@ module.exports = {
             if (!args[0]) return message.channel.send('Please tell me a user to warn!');
             const warnMember = message.mentions.members.first() || await message.guild.members.fetch(args[0]);
             if (!warnMember) return message.channel.send('Please provide a valid member!');
-            //if (warnMember === message.member) return message.channel.send('You wanna warn yourself nice :)');
+            if (warnMember === message.member) return message.channel.send('You wanna warn yourself nice :)');
             
-            await warnMember.send(`You were warned in **${message.guild.name}**\nReason: ${reason} || 'no reason provided'}`).catch(() => { })
+            await warnMember.send(`You were warned in **${message.guild.name}**\nReason: ${reason}` || 'no reason provided').catch(() => { })
 
             const warned = new MessageEmbed()
                 .setDescription('***User Warned!***')
