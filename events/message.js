@@ -58,7 +58,7 @@ else if (command === 'avatar') {
 }
 
 else if (command === 'mute') {
-    client.commands.get('mute').run(client, message, args);
+    client.commands.get('mute').execute(client, message, args);
 }
 else if (command === 'tmute') {
     client.commands.get('tmute').run(client, message, args);
