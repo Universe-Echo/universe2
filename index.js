@@ -17,7 +17,7 @@ client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
 client.on('messageCreate', message => {
   if (message.content === 'hi') {
 
-    message.reply('hello');
+    message.channel.send('hello');
   }
 });
 
