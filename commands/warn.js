@@ -24,7 +24,7 @@ module.exports = {
                 .setDescription('***User Warned!***')
                 .addField('User', `${warnMember}`, true)
                 .addField('Reason', `${reason}` || `no reason provided`, true)
-                .setColor('RANDOM')
+                .setColor('RED')
 
             message.channel.send(warned)
         }
