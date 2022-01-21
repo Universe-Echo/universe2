@@ -67,7 +67,7 @@ else if (command === 'unmute') {
     client.commands.get('unmute').execute(client, message, args);
 }
 else if (command === 'unban') {
-    client.commands.get('unban').run(client, message, args);
+    client.commands.get('unban').execute(client, message, args);
 }
 else if (command === 'emoji') {
     client.commands.get('emoji').run(client, message, args);
