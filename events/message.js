@@ -61,7 +61,7 @@ else if (command === 'mute') {
     client.commands.get('mute').execute(client, message, args);
 }
 else if (command === 'tmute') {
-    client.commands.get('tmute').run(client, message, args);
+    client.commands.get('tmute').execute(client, message, args);
 }
 else if (command === 'unmute') {
     client.commands.get('unmute').execute(client, message, args);

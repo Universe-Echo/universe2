@@ -4,11 +4,8 @@ const ms = require('ms');
 
 module.exports = {
     name: 'tmute',
-    /**
-     * @param {Message} message
-     */
-
-    run: async (client, message, args) => {
+    description: 'tmutes a member',
+    async execute(client, message, args) {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You dont have the perms to do this!')
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         const time = args[1]
