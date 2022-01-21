@@ -12,7 +12,7 @@ module.exports = {
 
 if (!Member) return message.channel.send('Member not valid.')
 
-const role = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted');
+const role = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'Muted');
 
 await Member.roles.remove(role)
 message.channel.send(`${Member.displayName} is now unmuted.`)

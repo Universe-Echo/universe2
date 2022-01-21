@@ -13,7 +13,7 @@ module.exports = {
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         if (!Member) return message.channel.send('Please provide a member to mute!')
         
-        let role2 = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'muted')
+        let role2 = message.guild.roles.cache.find(r => r.name.toLowerCase() === 'Muted')
         if (Member.roles.cache.has(role2.id)) return message.channel.send(`${Member.displayName} is already muted!`)
         await Member.roles.add(role2)
         message.channel.send(`${Member.displayName} is now muted!`)
