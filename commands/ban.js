@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'ban',
     description: 'BANS a member',
-    async execute(Client, message, args) {
+    async execute(client, message, args) {
         if (!message.member.guild.me.hasPermission('BAN_MEMBERS')) {
             return message.channel.send('I dont have the perms to do this!')
         }
