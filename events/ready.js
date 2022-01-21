@@ -3,11 +3,11 @@ module.exports = (client) => {
     
 
    const arrayOfStatus = [
-   `${client.guilds.cache.size} servers`,
-   `${client.channels.cache.size} channels`,
    
-   'p!help',
-   `Made by NEPTUNE`
+   `${client.channels.cache.size} channels`,
+   'Made for The Universe',
+   'un!',
+   
 
    
    ];
