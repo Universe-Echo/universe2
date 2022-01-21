@@ -30,13 +30,7 @@ const replie = [
 ]
 
 
-client.on('messageCreate', message => {
-  if (message.content === 'hello') {
-    const r = Math.floor(Math.random() * replie.length);
 
-    message.reply(replie[r]);
-  }
-});
 
 client.on('message', gotmessage);
 
@@ -51,7 +45,10 @@ async function gotmessage(message) {
 
   }
   
+  if (message.content === 'hello') {
+    const r = Math.floor(Math.random() * replie.length);
 
+    message.reply(replie[r]);
 }
 
 
@@ -64,7 +61,7 @@ const EventFiles = fs.readdirSync('./events/').filter(f => f.endsWith('.js'));
 
 client.slashCommands = new Discord.Collection();
 
-//https://discord.com/oauth2/authorize?client_id=873147009580826624&permissions=8&scope=bot%20applications.commandst
+
 
 for (const EventFile of EventFiles) {
     const event = require('./events/' + EventFile);
@@ -87,4 +84,4 @@ for (const File of Files) {
 
 }
 //
-
+}
