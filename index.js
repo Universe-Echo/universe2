@@ -14,32 +14,47 @@ client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
 
 
 
-const replies = [
+client.on('messageCreate', message => {
+  if (message.content === 'hi') {
+    const r = Math.floor(Math.random() * replies.length);
+
+    message.reply(replies[r]);
+  }
+});
+
+
+const replie = [
   'yes?',
-  'hello',
   'How are you',
-  'heyo'
+  'heyo',
 ]
 
 
+client.on('messageCreate', message => {
+  if (message.content === 'hello') {
+    const r = Math.floor(Math.random() * replie.length);
+
+    message.reply(replie[r]);
+  }
+});
+
 client.on('message', gotmessage);
 
-async function gotmessage(msg) {
+async function gotmessage(message) {
+  if (message.content === 'hlo') {
+    message.reply('hlu')
 
-  if (msg.content =='hi') {
+  }
 
-    const r = Math.floor(Math.random() * replies.length);
+  else if (message.content === 'sup') {
+  message.reply('Just doing my job, wbu?')
 
-    msg.reply(replies[r]);
-
+  }
   
-  }
-  else if (msg.content == 'sup') {
-    msg.reply('nothing much, you say')
-  }
 
 }
 
+client.on('messageCreate', )
 
 const fs = require('fs');
 const message = require('./events/message');
