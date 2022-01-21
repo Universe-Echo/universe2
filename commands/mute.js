@@ -3,12 +3,9 @@ const ms = require('ms');
 
 
 module.exports = {
-    name: 'mute',
-    /**
-     * @param {Message} message
-     */
-
-    run: async (client, message, args) => {
+        name: 'mute',
+        description: 'mutes a member',
+        async execute(client, message, args)  {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You dont have the perms to do this!')
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         if (!Member) return message.channel.send('Please provide a member to mute!')
