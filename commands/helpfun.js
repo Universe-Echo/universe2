@@ -10,11 +10,11 @@ module.exports = {
             .setDescription('**Fun commands :-**')
 
             
-            .addField('p!poll', 'for reaction poll')
+            .addField('un!poll', 'for reaction poll')
             
-            .addField('p!avatar', 'For enlarged avatars')
-            .addField('p!emoji (emoji)', 'To enlarge emojis')
-            .addField('p!8ball', 'To use 8ball')
+            .addField('un!avatar', 'For enlarged avatars')
+            .addField('un!emoji (emoji)', 'To enlarge emojis')
+            .addField('un!8ball', 'To use 8ball')
             
             .setFooter('Universe OP')
             .setColor('RANDOM')
