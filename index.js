@@ -16,40 +16,10 @@ client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
 
 client.on('messageCreate', message => {
   if (message.content === 'hi') {
-    const r = Math.floor(Math.random() * replies.length);
 
-    message.reply(replies[r]);
+    message.reply('hello');
   }
 });
-
-
-const replie = [
-  'yes?',
-  'How are you',
-  'heyo',
-]
-
-
-
-
-client.on('message', gotmessage);
-
-async function gotmessage(msg) {
-  if (msg.content === 'hlo') {
-    msg.reply('hlu')
-
-  }
-
-  else if (msg.content === 'sup') {
-  msg.reply('Just doing my job, wbu?')
-
-  }
-  
-  if (msg.content === 'hello') {
-    const r = Math.floor(Math.random() * replie.length);
-
-    msg.reply(replie[r]);
-}
 
 
 
