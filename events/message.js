@@ -116,7 +116,7 @@ else if (command === 'nuke') {
     client.commands.get('nuke').run(client, message, args);
 }
 else if (command === 'warn') {
-    client.commands.get('mute').execute(client, message, args);
+    client.commands.get('warn').execute(client, message, args);
 }
 }
 //
