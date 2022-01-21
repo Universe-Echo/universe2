@@ -54,7 +54,7 @@ async function gotmessage(message) {
 
 }
 
-client.on('messageCreate', )
+
 
 const fs = require('fs');
 const message = require('./events/message');
