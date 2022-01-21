@@ -4,7 +4,7 @@ const globPromise = promisify(glob);
 
 
 module.exports = (client, message) => {
-    const Prefix = 'p!';
+    const Prefix = 'un!';
     
    
     if (!message.content.startsWith(Prefix)) return;

@@ -16,7 +16,7 @@ client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
 
 const replies = [
   'yes?',
-  'hi',
+  'hello',
   'How are you',
   'heyo'
 ]
@@ -26,7 +26,7 @@ client.on('message', gotmessage);
 
 async function gotmessage(msg) {
 
-  if (msg.content.includes('Hi')) {
+  if (msg.content =='hi') {
 
     const r = Math.floor(Math.random() * replies.length);
 
@@ -35,7 +35,7 @@ async function gotmessage(msg) {
   
   }
   else if (msg.content == 'sup') {
-    msg.channel.send('nothing much, you say')
+    msg.reply('nothing much, you say')
   }
 
 }
