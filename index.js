@@ -21,7 +21,21 @@ client.on('messageCreate', message => {
   }
 });
 
+client.on('message', gotmessage);
 
+async function gotmessage(message) {
+  if (message.content === 'hlo') {
+    message.reply('hlu')
+
+  }
+
+  else if (message.content === 'sup') {
+  message.reply('Just doing my job, wbu?')
+
+  }
+  
+
+}
 
 const fs = require('fs');
 const message = require('./events/message');
