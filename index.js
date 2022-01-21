@@ -33,6 +33,9 @@ async function gotmessage(message) {
     message.channel.send('hello');
 
 }
+else if (message.content === 'moonie') {
+  message.channel.send('https://cdn.discordapp.com/attachments/929029642315247617/934114060436377610/9k.png')
+}
 }
 const fs = require('fs');
 const message = require('./events/message');
