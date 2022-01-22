@@ -21,22 +21,22 @@ client.on('message', gotmessage);
 async function gotmessage(message) {
   if (message.content === 'hlo') {
     message.reply('hlu')
-
-  }
+}
 
   else if (message.content === 'sup') {
   message.reply('Just doing my job, wbu?')
-
-  }
- else if (message.content === 'hi') {
-
-    message.channel.send('hello');
-
 }
+
+else if (message.content === 'hi') {
+    message.channel.send('hello');
+}
+
 else if (message.content === 'moonie') {
   message.channel.send('idk')
 }
+
 }
+
 const fs = require('fs');
 const message = require('./events/message');
 client.commands = new Discord.Collection();
@@ -52,18 +52,18 @@ for (const EventFile of EventFiles) {
     const EventName = EventFile.split('.')[0];
     client.on(EventName, event.bind(null, client));
 }
+
 const Files = fs.readdirSync('./commands/').filter(f => f.endsWith('.js'));
 for (const File of Files) {
     const command = require('./commands/' + File);
     client.commands.set(command.name, command);
     
     
-    
+
     
 }
-{
 
-  
+{
 
 
 }

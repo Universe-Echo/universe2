@@ -13,21 +13,17 @@ module.exports = (client, message) => {
     const args = message.content.slice(Prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if (command === 'ping') {
-      client.commands.get('ping').execute(client, message);
-
-    }
-
-    
-
-    else if (command === 'embed') {
-        client.commands.get('embed').execute(message); 
+if (command === 'ping') {
+    client.commands.get('ping').execute(client, message);
+}   
+else if (command === 'embed') {
+    client.commands.get('embed').execute(message); 
 }
 else if (command === 'help') {
     client.commands.get('help').execute(message); 
 }
 else if (command === 'poll') {
-        client.commands.get('poll').run(client, message, args);
+    client.commands.get('poll').run(client, message, args);
 }
 else if (command === 'puppy') {
     client.commands.get('puppy').execute(message); 
@@ -56,7 +52,6 @@ else if (command === 'kick') {
 else if (command === 'avatar') {
     client.commands.get('avatar').execute(client, message, args);
 }
-
 else if (command === 'mute') {
     client.commands.get('mute').execute(client, message, args);
 }
@@ -72,17 +67,14 @@ else if (command === 'unban') {
 else if (command === 'emoji') {
     client.commands.get('emoji').run(client, message, args);
 }
-
 else if (command === 'dm') {
     client.commands.get('dm').execute(client, message, args);
-
 }
 else if (command === 'gm') {
     client.commands.get('gm').execute(message);
 }
 else if (command === 'gn') {
     client.commands.get('gn').execute(message);
-    
 }
 else if (command === 'angry') {
     client.commands.get('angry').execute(message);
@@ -92,7 +84,6 @@ else if (command === 'create') {
 }
 else if (command === 'delete') {
     client.commands.get('delete').run(client, message, args);
-
 }
 else if (command === 'fun') {
     client.commands.get('fun').execute(message);
@@ -118,5 +109,8 @@ else if (command === 'nuke') {
 else if (command === 'warn') {
     client.commands.get('warn').execute(client, message, args);
 }
+
+//
+
 }
 //
