@@ -10,7 +10,7 @@ module.exports = {
             
             
         const ping = new MessageEmbed()
-        .setTitle("Bot ping")
+        .setTitle("Ping")
         .addField(`API Ping:`, `${apiPing}`)
         .addField(`Bot Ping:`,`${botPing}`)
         message.channel.send(ping)
