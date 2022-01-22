@@ -32,7 +32,7 @@ else if (message.content === 'hi') {
 else if (message.content === 'moonie') {
   message.channel.send('idk')
 }
-else if (message.content === `<@${bot.user.id}>`) {
+else if (message.content === `<@${client.user.id}>`) {
 
   prefix = new MessageEmbed()
   .setDiscription('Prefix: `un!`')
