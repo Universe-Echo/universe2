@@ -34,7 +34,7 @@ async function gotmessage(message) {
 
 }
 else if (message.content === 'moonie') {
-  message.channel.send('https://cdn.discordapp.com/attachments/929029642315247617/934114060436377610/9k.png')
+  message.channel.send('idk')
 }
 }
 const fs = require('fs');
