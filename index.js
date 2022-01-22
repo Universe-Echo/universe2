@@ -9,9 +9,7 @@ const fetch = require('node-fetch');
 
 
 
-let prefix = ('!')
 client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
-
 
 
 
@@ -37,12 +35,12 @@ else if (message.content === 'moonie') {
 
 }
 
+
 const fs = require('fs');
 const message = require('./events/message');
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 const EventFiles = fs.readdirSync('./events/').filter(f => f.endsWith('.js'));
-
 client.slashCommands = new Discord.Collection();
 
 
@@ -53,13 +51,12 @@ for (const EventFile of EventFiles) {
     client.on(EventName, event.bind(null, client));
 }
 
+
 const Files = fs.readdirSync('./commands/').filter(f => f.endsWith('.js'));
 for (const File of Files) {
     const command = require('./commands/' + File);
     client.commands.set(command.name, command);
     
-    
-
     
 }
 
@@ -67,5 +64,5 @@ for (const File of Files) {
 
 
 }
-//
+
 
