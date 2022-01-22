@@ -16,7 +16,7 @@ module.exports = {
             .addField('un!serverinfo', 'for server info')
             .addField('un!servers', 'for the list of servers the bot has joined')
             .addField('un!membercount', 'for member count of the server')
-            .addField('un!ping', 'to see the latency of the bot')
+            .addField('un!ping', '👀')
             
             .setFooter('Universe OP')
             .setColor('RANDOM')
