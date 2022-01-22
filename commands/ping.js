@@ -6,7 +6,7 @@ module.exports = {
 
        
             const apiPing = client.ws.ping
-            const botPing = m.createdTimestamp - message.createdTimestamp
+            const botPing = message.createdTimestamp - message.createdTimestamp
             
             
         const ping = new MessageEmbed()
