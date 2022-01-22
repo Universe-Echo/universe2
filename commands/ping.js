@@ -6,7 +6,7 @@ module.exports = {
 
         const ping = new MessageEmbed()
         .setTitle("Bot ping")
-        .addField(```API Ping: ```)
+        .addField("```API Ping: ```")
         message.channel.send(ping)
         message.channel.send('Calculating ping.......').then(m => {
             const apiPing = client.ws.ping
