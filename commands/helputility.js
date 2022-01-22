@@ -12,6 +12,7 @@ module.exports = {
             .addField('un!kick', 'Kicks a member from the server')
             .addField('un!ban', 'Bans a member from the server')
             .addField('Mute Commands', 'un!mute, un!tmute (time), un!unmute')
+            .addField('un!warn', 'to warn a member in the server')
             .addField('un!serverinfo', 'for server info')
             .addField('un!servers', 'for the list of servers the bot has joined')
             .addField('un!membercount', 'for member count of the server')
