@@ -37,6 +37,7 @@ else if (message.content === `<@${client.user.id}>`) {
   prefix = new MessageEmbed()
   .setDiscription('Prefix: `un!`')
   message.channel.send(prefix)
+  message.channel.send('hi')
 }
 
 }
