@@ -5,7 +5,7 @@ module.exports = {
     name: "nuke",
 
   run:  async (client, message, args) => {
-        if (!message.member.roles.cache.find(r => r.id == '882012269481951242')) {
+        if (!message.member.roles.cache.find(r => r.id == '912365546228576256')) {
          return message.channel.send('nu.... you dumb -_-')
         }
       

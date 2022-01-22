@@ -22,10 +22,10 @@ module.exports = {
             kickMember.kick();
 
             const kicked = new MessageEmbed()
-                .setDescription('***User Kicked!***')
+                .setDescription('**User Kicked!**')
                 .addField('User', `${kickMember}`, true)
                 .addField('Reason', `${reason}` || 'no reason provided', true)
-                .setColor('RANDOM')
+                .setColor('RED')
 
             message.channel.send(kicked)
 

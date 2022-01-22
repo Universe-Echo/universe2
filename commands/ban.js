@@ -22,10 +22,10 @@ module.exports = {
             banMember.ban({ days: 7 });
 
             const banned = new MessageEmbed()
-                .setDescription('***User Banned!***')
+                .setDescription('**User Banned!**')
                 .addField('User', `${banMember}`, true)
                 .addField('Reason', `${reason}` || `no reason provided`, true)
-                .setColor('RANDOM')
+                .setColor('RED')
 
             message.channel.send(banned)
 

@@ -21,7 +21,7 @@ module.exports = {
             await warnMember.send(`You were warned in **${message.guild.name}**\nReason: ${reason}` || 'no reason provided').catch(() => { })
 
             const warned = new MessageEmbed()
-                .setDescription('***User Warned!***')
+                .setDescription('**User Warned!**')
                 .addField('User', `${warnMember}`, true)
                 .addField('Reason', `${reason}` || `no reason provided`, true)
                 .setColor('RED')
