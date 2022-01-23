@@ -38,7 +38,12 @@ else if (message.mentions.has(client.user)) {
 
 }
 
-
+client.on('guildMemberAdd', (member) => {
+  
+  console.log(member)
+  
+  
+  })
 const fs = require('fs');
 const message = require('./events/message');
 client.commands = new Discord.Collection();
