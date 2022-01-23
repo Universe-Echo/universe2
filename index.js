@@ -33,7 +33,7 @@ else if (message.content === 'moonie') {
   message.channel.send('idk')
 }
 else if (message.mentions.has(client.user)) {
-  prefix = new MessageEmbed()
+  const prefix = new MessageEmbed()
   .addDescription('Prefix:`un!`')
   
   return message.channel.send(prefix)
