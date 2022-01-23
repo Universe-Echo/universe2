@@ -32,9 +32,9 @@ else if (message.content === 'hi') {
 else if (message.content === 'moonie') {
   message.channel.send('idk')
 }
-else if (message.content === '<@934034791702081546>') {
+else if (message.mentions.has(client.user)) {
 
-  message.channel.send('hi')
+  return message.channel.send('hi')
 }
 
 }
