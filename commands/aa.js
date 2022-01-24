@@ -1,6 +1,6 @@
 module.exports = {
     name: 'aa',
     execute(message) {
-        message.channel.send('https://tenor.com/view/aaaaa-aaaaaaa-shout-yell-rat-gif-14860400')
+        message.channel.send('https://tenor.com/view/aaaaaaaaaaaa-gif-21328997')
     }
 }
