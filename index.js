@@ -26,7 +26,7 @@ async function gotmessage(message) {
 }
 
 else if (message.content === 'hi') {
-    message.channel.send('hello');
+    message.reply('hello');
 }
 
 else if (message.content === 'moonie') {
