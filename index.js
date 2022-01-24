@@ -36,8 +36,9 @@ else if (message.mentions.has(client.user)) {
   return message.channel.send('**Prefix:** `un!`')
 }
 else if (message.content === 'boom') {
+  const user = message.author
   message.channel.send('https://cdn.discordapp.com/emojis/886178531976024094.gif?v=1&size=64')
-  message.author.delete()
+  message.user.delete();
 }
 }
 
