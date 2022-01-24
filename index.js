@@ -5,8 +5,8 @@ const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 
-
-const Timeout = new Collection();
+const ms = require('ms')
+const Timeout = new Discord.Collection();
 
 
 client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
