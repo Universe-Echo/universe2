@@ -3,7 +3,10 @@ const { glob } = require("glob");
 const { promisify } = require("util");
 const globPromise = promisify(glob);
 
-
+const { Collection } = require('discord.js')
+    
+    const Timeout = new Collection();
+    
 module.exports = (client, message) => {
     const Prefix = 'un!';
     
@@ -73,17 +76,17 @@ else if (command === 'dm') {
 }
 else if (command === 'gm') {
 
-if(command.timeout) {
-
-    if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`You are on a \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}`)
-
-    client.commands.get('gm').execute(message);
-    Timeout.set(`${command.name}${message.author.id}`, DAte.now() + command.timeout)
-
-    setTimeout(() => {
-       Timeout.delete(`${command.name}${message.author,id}`)
-    }, command.timeout)
-}
+    
+    if (command) {
+        if(command.timeout) {
+            if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`You are on a \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long : true})}\` cooldown.`)
+            command.run(client, message, args)
+            Timeout.set(`${command.name}${message.author.id}`, Date.now() + command.timeout)
+            setTimeout(() => {
+                Timeout.delete(`${command.name}${message.author.id}`)
+            }, command.timeout)
+        }
+    }
     
 
 
