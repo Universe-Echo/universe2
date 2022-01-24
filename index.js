@@ -17,6 +17,8 @@ client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
 client.on('message', gotmessage);
 
 async function gotmessage(message) {
+
+  if (message.author.bot) return;
   if (message.content === 'hlo') {
     message.reply('hlu')
 }
