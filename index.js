@@ -6,11 +6,10 @@ const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 
 
-
+const Timeout = new Collection();
 
 
 client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
-
 
 
 

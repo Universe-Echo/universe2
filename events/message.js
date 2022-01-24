@@ -1,3 +1,4 @@
+const { TIMEOUT } = require("dns");
 const { glob } = require("glob");
 const { promisify } = require("util");
 const globPromise = promisify(glob);
@@ -71,7 +72,23 @@ else if (command === 'dm') {
     client.commands.get('dm').execute(client, message, args);
 }
 else if (command === 'gm') {
+
+if(command.timeout) {
+
+    if(Timeout.has(`${command.name}${message.author.id}`)) return message.channel.send(`You are on a \`${ms(Timeout.get(`${command.name}${message.author.id}`) - Date.now(), {long: true})}`)
+
     client.commands.get('gm').execute(message);
+    Timeout.set(`${command.name}${message.author.id}`, DAte.now() + command.timeout)
+
+    setTimeout(() => {
+       Timeout.delete(`${command.name}${message.author,id}`)
+    }, command.timeout)
+}
+    
+
+
+
+
 }
 else if (command === 'gn') {
     client.commands.get('gn').execute(message);
