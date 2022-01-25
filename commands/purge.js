@@ -15,7 +15,7 @@ module.exports = {
         try {
             message.channel.bulkDelete(parseInt(amount) + 1, true).then(m => {
                 message.channel.send(`${parseInt(m.size - 1)} messages purged!`).then(m => {
-                    m.delete({ timeout: 3000 });
+                    m.delete({ timeout: 2000 });
                 })
             })
         } catch {
