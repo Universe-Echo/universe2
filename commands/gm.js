@@ -6,7 +6,7 @@ module.exports = {
     execute(message) {
         if (cooldown.has(message.author.id)) {
             message.channel.send('Pls wait 1 min')
-            message.delete({ timeout: 10000 /*time unitl delete in milliseconds*/});
+            message.delete();
         }
         else {
             message.channel.send('https://tenor.com/view/cat-peek-a-boo-kitty-white-cat-cute-cat-gif-16415828')
