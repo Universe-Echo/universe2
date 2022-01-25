@@ -5,7 +5,7 @@ module.exports = {
     timeout: 10000,
     execute(message) {
         if (cooldown.has(message.author.id)) {
-            message.channel.send('Pls wait 1 min').then(msg=>msg.delete({timeout:"2000"/*Time until delete in milliseconds*/})
+            message.channel.send('Pls wait 10 secs before using that command....').then(msg=>msg.delete({timeout:"1000"/*Time until delete in milliseconds*/})
            
             )}
         else {
@@ -14,7 +14,7 @@ module.exports = {
         cooldown.add(message.author.id);
         setTimeout(() => {
             cooldown.delete(message.author.id)
-        }, 60000);
+        }, 10000);
 
 
     }
