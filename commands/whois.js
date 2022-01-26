@@ -17,9 +17,9 @@ module.exports = {
         .setDescription(`${user}`)
         .setColor(`RANDOM`)
        // .setThumbnail(user.user.displayAvatarURL)
-       .addField('__Joined at:__ ',`${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}`, true)
-        .addField("Account Created On:", `${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY")}`, true) 
-        .addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`)
+       .addField('__Joined at:__ ',`\`\`\`\${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")}\`\`\`\``, true)
+        .addField("Account Created On:", `\`\`\`\${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY")}\`\`\`\``, true) 
+        .addField("Nickname:", `\`\`\`\${member.nickname !== null ? ${member.nickname} : 'None'}\`\`\`\``)
         
         
         .addField("Roles", `${member.roles.cache.map(r => r).join(' ').replace('@everyone', ' ')}`)
