@@ -18,6 +18,7 @@ module.exports = {
             .addField('un!membercount', 'for member count of the server')
             .addField('un!ping', 'to see the latency')
             .addField('un!whois', 'for user userinfo')
+            .addField('un!cinfo', 'for channel info')
             .setFooter('Universe OP')
             .setColor('RANDOM')
             .setTimestamp()
