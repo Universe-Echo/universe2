@@ -33,7 +33,7 @@ else if (message.content === 'hi') {
 else if (message.content === 'moonie') {
   message.channel.send('idk')
 }
-else if (message.mentions.has(client.user)) {
+else if (message.content === `<@934034791702081546>`) {
   return message.channel.send('**Prefix:** `un!`')
 }
 else if (message.content === 'boom') {
