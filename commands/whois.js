@@ -13,7 +13,7 @@ module.exports = {
         .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
         .setDescription(`${user}`)
         .setColor(`RANDOM`)
-        .setThumbnail(user.user.displayAvatarURL)
+       // .setThumbnail(user.user.displayAvatarURL)
         .addField('Joined at:', `${moment.utc(user.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
         .addField('Status:', user.presence.status, true)
        // .addField('Roles:', member.roles.map(r => `${r}`).join(' | '), true)
