@@ -7,6 +7,7 @@ module.exports = {
     async execute(client, message, args)  {
 
     let user = message.mentions.users.first() || message.author;
+    const member = message.guild.member(user);
     const joinDiscord = moment(user.createdAt).format('llll');
     const joinServer = moment(user.joinedAt).format('llll');
     let whois = new MessageEmbed()
@@ -17,7 +18,7 @@ module.exports = {
         .addField('Joined at:', `${moment.utc(user.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
         .addField("Account Created On:", `${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY")}`, true) 
         .addField('Status:', user.presence.status)
-       // .addField('Roles:', member.roles.map(r => `${r}`).join(' | '), true)
+        .addField('Roles:', member.roles.map(r => `${r}`).join(' | '), true)
         .setFooter(`ID: ${user.id}`)
         .setTimestamp();
 
