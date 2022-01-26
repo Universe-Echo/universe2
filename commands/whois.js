@@ -6,7 +6,7 @@ module.exports = {
 
     async execute(client, message, args)  {
 
-    let user = message.mentions.users.first() || message.author;
+    let member = message.mentions.users.first() || message.author;
     const joinDiscord = moment(user.createdAt).format('llll');
     const joinServer = moment(user.joinedAt).format('llll');
     let whois = new MessageEmbed()
