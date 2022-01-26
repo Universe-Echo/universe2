@@ -11,7 +11,7 @@ module.exports = {
     const embed = new Discord.MessageEmbed()
       .setTitle(`Server info for`)
       .setThumbnail(guild.iconURL({ dynamic: true, size: 512 }))
-      .addField("Owner", `${message.guild.owner}`)
+      .addField(" <:PinkMoon925821116608553052:931807859795169331> Owner", `${message.guild.owner}`)
       
       .addField(" <:members:935945505521930271> Member Count", `${message.guild.memberCount}`, true)
       
