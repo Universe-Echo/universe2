@@ -19,7 +19,7 @@ module.exports = {
       .addField("Created On", ` \`\`\`\ ${message.guild.createdAt.toDateString()} \`\`\`\ `, true)
       .addField("Roles", ` \`\`\`\ ${message.guild.roles.cache.size} \`\`\`\ `, true)
       .addField('Channels', ` \`\`\`\ ${message.guild.channels.cache.size} \`\`\`\ `)
-      .addField('Boosts', ` \`\`\`\ ${message.guild.premiumSubscriptionCount || '0'} \`\`\`\ `)
+      .addField(' <:boost:930008252597551135> Boosts', ` \`\`\`\ ${message.guild.premiumSubscriptionCount || '0'} \`\`\`\ `)
       
       .setTimestamp()
       .setFooter(`Id - ${message.guild.id}`)
