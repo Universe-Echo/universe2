@@ -22,7 +22,7 @@ module.exports = {
 
             const warned = new MessageEmbed()
                 .setDescription('**User Warned!**')
-                .addField('User', `${warnMember}`, true)
+                .addField(' <:boosted2:872787394112413746>  User', `${warnMember}`, true)
                 .addField('Reason', `${reason}` || `no reason provided`, true)
                 .setColor('RED')
 
