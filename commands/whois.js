@@ -20,7 +20,7 @@ module.exports = {
         .setFooter(`ID: ${user.id}`)
         .setTimestamp();
 
-    message.channel.send(embed);
+    message.channel.send(whois);
     return;
 }
 }
