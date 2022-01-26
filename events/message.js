@@ -125,4 +125,8 @@ else if (command === 'play') {
 
 
 }
+else if (command === 'cinfo') {
+    client.commands.get('cinfo').execute(client, message, args);
+
+}
 }
