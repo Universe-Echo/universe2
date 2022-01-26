@@ -120,5 +120,9 @@ else if (command === 'whois') {
     client.commands.get('whois').execute(client, message, args);
 
 }
+else if (command === 'play') {
+    client.commands.get('play').execute(client, message, args);
 
+
+}
 }
