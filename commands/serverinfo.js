@@ -10,7 +10,7 @@ module.exports = {
     const channels = message.guild.channels.cache;
     const embed = new Discord.MessageEmbed()
       .setTitle(`Server info for`)
-      .setThumbnail(icon)
+      .setThumbnail(guild.iconURL({ dynamic: true, size: 512 }))
       .addField("Owner", `${message.guild.owner}`)
       
       .addField("Member Count", ` \`\`\`\ ${message.guild.memberCount} \`\`\`\ `, true)
