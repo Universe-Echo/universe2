@@ -14,7 +14,7 @@ const {
 
 // ...
 const  voiceChannel = ('786239006450647100')
-const guild = ('779213432389107742'),
+const guild = ('779213432389107742')
 
 const connection = joinVoiceChannel({
 	channelId: voiceChannel,
