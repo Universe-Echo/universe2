@@ -9,7 +9,7 @@ module.exports = {
     let user = message.mentions.users.first() || message.author;
     const joinDiscord = moment(user.createdAt).format('llll');
     const joinServer = moment(user.joinedAt).format('llll');
-    let whois = new Discord.RichEmbed()
+    let whois = new MessageEmbed()
         .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
         .setDescription(`${user}`)
         .setColor(`RANDOM`)
