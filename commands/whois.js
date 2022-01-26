@@ -17,6 +17,7 @@ module.exports = {
        // .setThumbnail(user.user.displayAvatarURL)
         .addField('Joined at:', `${moment.utc(user.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
         .addField("Account Created On:", `${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY")}`, true) 
+        .addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`)
         .addField('Status:', user.presence.status)
         .addField("Roles", `${member.roles.cache.map(r => r).join(' ').replace('@everyone', ' ')}`)
         .setFooter(`ID: ${user.id}`)
