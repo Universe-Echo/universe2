@@ -12,6 +12,7 @@ module.exports = {
     const joinServer = moment(user.joinedAt).format('llll');
     let whois = new MessageEmbed()
         .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
+        .setThumbnail(message.author.avatarURL)
         .setDescription(`${user}`)
         .setColor(`RANDOM`)
        // .setThumbnail(user.user.displayAvatarURL)
@@ -19,7 +20,7 @@ module.exports = {
         .addField("Account Created On:", `${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY")}`, true) 
         .addField("Nickname:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`)
         .addField('Status:', user.presence.status)
-        .addField("Game:", `${user.presence.game ? user.presence.game.name : 'None'}`)
+        
         .addField("Roles", `${member.roles.cache.map(r => r).join(' ').replace('@everyone', ' ')}`)
         .setFooter(`ID: ${user.id}`)
         .setTimestamp();
