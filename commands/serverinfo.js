@@ -18,7 +18,7 @@ module.exports = {
       .addField("Emojis", ` \`\`\`\ ${message.guild.emojis.cache.size} Emojis \`\`\`\ `)
       .addField("Created On", ` \`\`\`\ ${message.guild.createdAt.toDateString()} \`\`\`\ `, true)
       .addField("Roles", ` \`\`\`\ ${message.guild.roles.cache.size} \`\`\`\ `, true)
-      .addField('Channels', ` \`\`\`\ ${message.guild.channels.cache.size} \`\`\`\ `)
+      .addField(' <:channel:935944479150579782> Channels', ` \`\`\`\ ${message.guild.channels.cache.size} \`\`\`\ `)
       .addField(' <:boost:930008252597551135> Boosts', `${message.guild.premiumSubscriptionCount || '0'}`)
       
       .setTimestamp()
