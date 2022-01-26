@@ -17,9 +17,10 @@ module.exports = {
       
       .addField(" 🙂Emojis", ` ${message.guild.emojis.cache.size} Emojis`)
       .addField(" 🗓️ Created On", `${message.guild.createdAt.toDateString()}`, true)
-      .addField(" <:role:935946975273160704> Roles", `${message.guild.roles.cache.size} `, true)
+      
       .addField(' <:channel:935944479150579782> Channels', `${message.guild.channels.cache.size}`)
-      .addField(' <:boost:930008252597551135> Boosts', ` ${message.guild.premiumSubscriptionCount || '0'}`)
+      .addField(" <:role:935946975273160704> Roles", `${message.guild.roles.cache.size} `, true)
+      .addField(' <:boost:930008252597551135> Boosts', ` ${message.guild.premiumSubscriptionCount || '0'}`, true)
       
       .setTimestamp()
       .setFooter(`Id - ${message.guild.id}`)
