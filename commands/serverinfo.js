@@ -13,13 +13,13 @@ module.exports = {
       .setThumbnail(icon)
       .addField("Owner", `${message.guild.owner}`)
       
-      .addField("Member Count", `${message.guild.memberCount}`, true)
+      .addField("Member Count", ` \`\`\`\ ${message.guild.memberCount} \`\`\`\ `, true)
       
-      .addField("Emojis", `${message.guild.emojis.cache.size} Emojis`)
-      .addField("Created On", `${message.guild.createdAt.toDateString()}`, true)
-      .addField("Roles", `${message.guild.roles.cache.size}`, true)
-      .addField('Channels', `${message.guild.channels.cache.size}`)
-      .addField('Boosts', `${message.guild.premiumSubscriptionCount || '0'}`)
+      .addField("Emojis", ` \`\`\`\ ${message.guild.emojis.cache.size} Emojis \`\`\`\ `)
+      .addField("Created On", ` \`\`\`\ ${message.guild.createdAt.toDateString()} \`\`\`\ `, true)
+      .addField("Roles", ` \`\`\`\ ${message.guild.roles.cache.size} \`\`\`\ `, true)
+      .addField('Channels', ` \`\`\`\ ${message.guild.channels.cache.size} \`\`\`\ `)
+      .addField('Boosts', ` \`\`\`\ ${message.guild.premiumSubscriptionCount || '0'} \`\`\`\ `)
       
       .setTimestamp()
       .setFooter(`Id - ${message.guild.id}`)
