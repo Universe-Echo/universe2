@@ -13,10 +13,12 @@ const {
 } = require('@discordjs/voice');
 
 // ...
+const  voiceChannel = ('786239006450647100')
+const guild = ('779213432389107742'),
 
 const connection = joinVoiceChannel({
-	channelId: voiceChannel.id,
-	guildId: guild.id,
+	channelId: voiceChannel,
+	guildId: guild,
 	adapterCreator: guild.voiceAdapterCreator,
 });
 
