@@ -12,7 +12,7 @@ module.exports = {
     const joinServer = moment(user.joinedAt).format('llll');
     let whois = new MessageEmbed()
         .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
-        .setImage(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
+        .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
         .setDescription(`${user}`)
         .setColor(`RANDOM`)
        // .setThumbnail(user.user.displayAvatarURL)
