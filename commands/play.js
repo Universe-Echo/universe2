@@ -13,14 +13,12 @@ const {
 } = require('@discordjs/voice');
 
 // ...
-const  voiceChannel = ('786239006450647100')
-const guild = ('779213432389107742')
-
 const connection = joinVoiceChannel({
-	channelId: voiceChannel,
-	guildId: guild,
-	adapterCreator: guild.voiceAdapterCreator,
+    channelId: message.channelId,
+    guildId: message.guildId,
+    adapterCreator: message.guild.voiceAdapterCreator
 });
+
 
 const stream = ytdl('https://www.youtube.com/watch?v=60ItHLz5WEA', { filter: 'audioonly' });
 const resource = createAudioResource(stream, { inputType: StreamType.Arbitrary });
