@@ -13,7 +13,7 @@ module.exports = {
       .setThumbnail(guild.iconURL({ dynamic: true, size: 512 }))
       .addField("Owner", `${message.guild.owner}`)
       
-      .addField("Member Count", ` \`\`\`\ ${message.guild.memberCount} \`\`\`\ `, true)
+      .addField(" <:members:935945505521930271> Member Count", `${message.guild.memberCount}`, true)
       
       .addField(" 🙂Emojis", ` ${message.guild.emojis.cache.size} Emojis`)
       .addField("Created On", ` \`\`\`\ ${message.guild.createdAt.toDateString()} \`\`\`\ `, true)
