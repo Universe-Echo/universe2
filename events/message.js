@@ -129,4 +129,8 @@ else if (command === 'cinfo') {
     client.commands.get('cinfo').execute(client, message, args);
 
 }
+else if (command === 'lock') {
+    client.commands.get('lock').execute(client, message, args);
+
+}
 }
