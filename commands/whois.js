@@ -18,7 +18,7 @@ module.exports = {
         .addField('Joined at:', `${moment.utc(user.joinedAt).format('dddd, MMMM Do YYYY, HH:mm:ss')}`, true)
         .addField("Account Created On:", `${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY")}`, true) 
         .addField('Status:', user.presence.status)
-        .addField('Roles:', user.roles ? user.roles.map(r => `${r}`).join(' | ') : "", true)
+        .addField("Roles", `${member.roles.cache.map(r => r).join(' ').replace('@everyone', ' ')}`)
         .setFooter(`ID: ${user.id}`)
         .setTimestamp();
 
