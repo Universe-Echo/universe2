@@ -16,4 +16,6 @@ module.exports = {
         message.channel.send(`${Member.displayName} is now muted!`)
 
     }
+
+    
 }
