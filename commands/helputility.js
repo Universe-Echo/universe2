@@ -21,7 +21,7 @@ module.exports = {
             .addField('un!cinfo', 'for channel info')
             .addField('un!lock/unlock', 'to lock/unlock a channel')
             .setFooter('Universe OP')
-            .setColor('RANDOM')
+            .setColor('GREY')
             .setTimestamp()
         message.channel.send(Embed);
     

@@ -14,7 +14,7 @@ module.exports = {
             .addField('un!fun', 'for fun commands menu')
            
             .setFooter('Universe OP')
-            .setColor('RANDOM')
+            .setColor('GREY')
             .setTimestamp()
         message.channel.send(Embed);
     

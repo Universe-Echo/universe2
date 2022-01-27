@@ -17,7 +17,7 @@ module.exports = {
             .addField('un!8ball', 'To use 8ball')
             
             .setFooter('Universe OP')
-            .setColor('RANDOM')
+            .setColor('GREY')
             .setTimestamp()
         message.channel.send(Embed);
     
