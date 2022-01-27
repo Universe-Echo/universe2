@@ -1,30 +1,27 @@
 module.exports = {
     name: 'lock',
-    description: 'Lockdown a channel from anyone sending messages',
-    category: "Moderation",
-    aliases: ['lock'],
     async execute(client, message, args) {
-        if (!message.member.permissionsIn(message.channel).toArray().includes('MANAGE_ROLES')) return message.reply("You can't manage this channels permissions!")
-        if (!message.guild.me.permissionsIn(message.channel).toArray().includes('MANAGE_ROLES')) return message.reply("I can't manage this channels permissions!")
 
-        if(!message.channel.permissionOverwrites.cache.get(message.guild.roles.everyone.id).deny.toArray().includes('SEND_MESSAGES')){
-            message.channel.permissionOverwrites.edit(message.client.user, {
-                SEND_MESSAGES: true,
-                VIEW_CHANNEL: true
-            })
-            .then(message.channel.permissionOverwrites.edit(message.guild.roles.everyone.id, {
-                SEND_MESSAGES: false,
-            }))
-            .then(message.channel.permissionOverwrites.edit(message.author.id, {
-                SEND_MESSAGES: true,
-            }))
-            message.channel.send("✅ Channel locked down until further notice. Use this command again to unlockdown!")
-        } else {
-            message.channel.permissionOverwrites.edit(message.guild.roles.everyone.id, {
-                SEND_MESSAGES: true,
-            })
-            .then(message.channel.send("✅ Channel unlocked."))
-         }
-        
-    },
-};
+    const role = message.guild.roles.cache.find( r => r.name === '@everyone')
+
+    let channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
+
+    if (!channel) channel = message.channel;
+
+    if (channel.permissionsFor(message.guild.id).has('SEND_MESSAGES') === false) {
+        return message.channel.send(`${channel} is already locked lol`);
+
+
+
+
+    }
+
+    await channel.updateOverwrite(message.guild.id, {SEND_MESSAGES: false}).catch(() => { })
+
+    await channel.updateOverwrite(role, {SEND_MESSAGES: false}).catch(() => { })
+
+    message.channel.send(`🔒Locked ${channel}!`)
+  
+    }
+
+}

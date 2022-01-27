@@ -133,4 +133,8 @@ else if (command === 'lock') {
     client.commands.get('lock').execute(client, message, args);
 
 }
+else if (command === 'unlock') {
+    client.commands.get('unlock').execute(client, message, args);
+
+}
 }
