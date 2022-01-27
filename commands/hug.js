@@ -4,7 +4,10 @@ module.exports = {
     name: 'hug',
     async execute(client, message, args) {
 
-        const gifs = ["message one", "message two", "message three", "message four"]
+        const gifs = ["https://tenor.com/view/hug-anime-gif-15793126",
+                     "https://tenor.com/view/anime-cute-sweet-hug-gif-12668681",
+                     "https://tenor.com/view/hug-anime-gif-4898650",
+                     "https://tenor.com/view/hug-anime-gif-19674705"]
 
         const randomMessage = gifs[Math.floor(Math.random() * gifs.length)];
         
