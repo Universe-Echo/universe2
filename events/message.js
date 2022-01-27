@@ -137,4 +137,7 @@ else if (command === 'unlock') {
     client.commands.get('unlock').execute(client, message, args);
 
 }
+else if (command === 'hug') {
+    client.commands.get('hug').execute(client, message, args);
+}
 }

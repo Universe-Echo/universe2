@@ -22,7 +22,7 @@ client.on('ready', () => {
     user.send(`I'm on!`);
    });
 })
-
+prefix = 'u'
 client.on('message', gotmessage);
 
 async function gotmessage(message) {
@@ -51,7 +51,10 @@ else if (message.content === 'boom') {
   message.channel.send('https://cdn.discordapp.com/emojis/886178531976024094.gif?v=1&size=64')
   message.delete();
 }
+
+ 
 }
+
 
 client.on('guildMemberAdd', (member) => {
   
@@ -61,6 +64,7 @@ client.on('guildMemberAdd', (member) => {
   })
 const fs = require('fs');
 const message = require('./events/message');
+const { relativeTimeRounding } = require('moment');
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 const EventFiles = fs.readdirSync('./events/').filter(f => f.endsWith('.js'));
