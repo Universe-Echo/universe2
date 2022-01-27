@@ -3,6 +3,13 @@ const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'hug',
     async execute(client, message, args) {
+
+        const gifs = ["message one", "message two", "message three", "message four"]
+
+        const randomMessage = gifs[Math.floor(Math.random() * gifs.length)];
+        
+
+
         let huggedperson = message.mentions.members.first()
         let hugperson = message.author || await message.guild.members.fetch(args[0]);
         if (!huggedperson) return message.channel.send('**Tell a person to hug re .__.**') 
@@ -12,7 +19,7 @@ module.exports = {
        huggedperson.send(`**You got a hug from ${message.author.username} :)**`)
       
       message.channel.send(`**${message.author.username} hugs ${huggedperson.user.username}, cute uwu**`)
-      message.channel.send('https://tenor.com/view/hug-anime-gif-15793126')
+      message.channel.send(randomMessage)
       
      
         }
