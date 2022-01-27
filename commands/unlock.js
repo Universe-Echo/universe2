@@ -5,16 +5,16 @@ module.exports = {
     const role = message.guild.roles.cache.find( r => r.name === '@everyone')
 
     let channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
-
+    
     if (!channel) channel = message.channel;
 
-    if (channel.permissionsFor(message.guild.id).has('SEND_MESSAGES') === true) {
-        return message.channel.send(`${channel} is already unlocked lol`);
-
-
-
+    if (!message.member.hasPermission('ADMINISTRATOR')) {
+        return message.channel.send('You dont have the perms to do this!') 
 
     }
+    try {
+        if (channel.permissionsFor(message.guild.id).has('SEND_MESSAGES') === true) 
+             return message.channel.send(`${channel} is already unlocked lol`);
 
     await channel.updateOverwrite(message.guild.id, {SEND_MESSAGES: true}).catch(() => { })
 
@@ -22,6 +22,13 @@ module.exports = {
 
     message.channel.send(`🔓Unlocked ${channel}!`)
   
+    } 
+    catch (e) {
+            return message.channel.send(`there was an error:\n${e.message}`)
+        }
     }
 
-}
+
+
+} 
+
