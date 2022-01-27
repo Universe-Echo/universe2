@@ -4,12 +4,13 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
-
+require('dotenv').config()
+var token = process.env.token;
 const ms = require('ms')
 const Timeout = new Discord.Collection();
 
 
-client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
+client.login(token);
 
 client.on('ready', () => {
   client.users.fetch('673846605920600068', false).then((user) => {
