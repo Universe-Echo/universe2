@@ -11,7 +11,17 @@ const Timeout = new Discord.Collection();
 
 client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
 
+client.on('ready', () => {
+  client.users.fetch('673846605920600068', false).then((user) => {
+    user.send(`I'm on!`);
+   });
+})
 
+client.on('ready', () => {
+  client.users.fetch('724874670796570696', false).then((user) => {
+    user.send(`I'm on!`);
+   });
+})
 
 client.on('message', gotmessage);
 
