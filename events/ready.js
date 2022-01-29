@@ -1,7 +1,7 @@
 module.exports = (client) => {
     
    const arrayOfStatus = [
-   `Managing ${client.users.cache.size} members`,
+   `Managing ${client.guilds.users.cache.size} members`,
    'Made for The Universe',
    'un!',
    
