@@ -11,8 +11,8 @@ module.exports = {
             
         const ping = new MessageEmbed()
         .setTitle("Ping")
-        .addField(`API Ping:`, ` \`\`\`\ ${apiPing} \`\`\`\ `)
-        .addField(`Bot Ping:`,` \`\`\`\ ${botPing} \`\`\`\ `)
+        .addField(`API Ping:`, ` \`\`\`\py\n ${apiPing} \`\`\`\ `)
+        .addField(`Bot Ping:`,` \`\`\`\py\n ${botPing} \`\`\`\ `)
         message.channel.send(ping)
             m.edit(`Api Latency: ${apiPing}ms\nBot Latency: ${botPing}ms`)
             m.delete();
