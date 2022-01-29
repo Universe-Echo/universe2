@@ -6,7 +6,7 @@ module.exports = {
        
 
 
-            let url = 'https://g.tenor.com/v1/search?q=animepat&key=EURH7SHHRLJW&limit=8'
+            let url = 'https://g.tenor.com/v1/search?q=anime_pat&key=EURH7SHHRLJW&limit=8'
         
             let response = await fetch(url);
         
