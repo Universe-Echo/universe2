@@ -13,7 +13,8 @@ const args = message.content.split(' ').slice(1);
         "Yes",
         "No",
         "Without a doubt",
-        "For Sure"
+        "For Sure",
+        "maybe, maybe not"
     ];
 
     let result = Math.floor(Math.random() * replys.length);

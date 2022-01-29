@@ -140,4 +140,7 @@ else if (command === 'unlock') {
 else if (command === 'hug') {
     client.commands.get('hug').execute(client, message, args);
 }
+else if (command === 'pat') {
+    client.commands.get('pat').execute(client, message, args);
+}
 }
