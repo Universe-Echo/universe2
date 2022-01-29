@@ -22,20 +22,20 @@ module.exports = {
       .setThumbnail(guild.iconURL({ dynamic: true, size: 512 }))
       .addField("Owner", `${message.guild.owner}`)
       
-      .addField("⮞Member Count", ` \`\`\`\ ${message.guild.memberCount} \`\`\`\ `)
+      .addField("⮞Member Count", ` \`\`\`\css\n${message.guild.memberCount} \`\`\`\ `)
       
-      .addField("⮞Emojis", ` \`\`\`\ ${message.guild.emojis.cache.size} \`\`\`\ `, true)
-      .addField(`Animated`, ` \`\`\`\ ${message.guild.emojis.cache.filter(emoji => emoji.animated).size.toString()} \`\`\`\ `, true)
-      .addField("⮞Created On", ` \`\`\`\ ${message.guild.createdAt.toDateString()} \`\`\`\ `,)
+      .addField("⮞Emojis", ` \`\`\`\css\n${message.guild.emojis.cache.size} \`\`\`\ `, true)
+      .addField(`Animated`, ` \`\`\`\css\n${message.guild.emojis.cache.filter(emoji => emoji.animated).size.toString()} \`\`\`\ `, true)
+      .addField("⮞Created On", ` \`\`\`\css\n [${message.guild.createdAt.toDateString()}] \`\`\`\ `,)
       
-      .addField('⮞Verification level', ` \`\`\`\ ${verificationLevels[message.guild.verificationLevel]} \`\`\`\ `)
+      .addField('⮞Verification level', ` \`\`\`\css\n [${verificationLevels[message.guild.verificationLevel]}] \`\`\`\ `)
      // .addField(`no. of Text Channel\'s:`, ` \`\`\`\ ${message.guild.channels.cache.filter(channel => channel.type === 'GUILD_TEXT').size.toString()} \`\`\`\ ` )
      //.addField(`no. of Voice Channel\'s:`, ` \`\`\`\ ${message.guild.channels.cache.filter(channel => channel.type === 'GUILD_VOICE').size.toString()} \`\`\`\ ` , true ) 
-     .addField('⮞Channels', ` \`\`\`\ ${message.guild.channels.cache.size} \`\`\`\ `, true)
+     .addField('⮞Channels', ` \`\`\`\css\n${message.guild.channels.cache.size} \`\`\`\ `, true)
       
-      .addField(" Roles", ` \`\`\`\ ${message.guild.roles.cache.size} \`\`\`\ `, true)
-      .addField('Boosts', ` \`\`\`\ ${message.guild.premiumSubscriptionCount || '0'} \`\`\`\ `, true)
-      .addField(`⮞Boost Level`,` \`\`\`\ ${message.guild.premiumTier.toString()} \`\`\`\ `)
+      .addField(" Roles", ` \`\`\`\css\n${message.guild.roles.cache.size} \`\`\`\ `, true)
+      .addField('Boosts', ` \`\`\`\css\n${message.guild.premiumSubscriptionCount || '0'} \`\`\`\ `, true)
+      .addField(`⮞Boost Level`,` \`\`\`\css\n${message.guild.premiumTier.toString()} \`\`\`\ `)
       .setTimestamp()
       .setFooter(`Id - ${message.guild.id}`)
 
