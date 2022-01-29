@@ -75,9 +75,7 @@ else if (command === 'dm') {
     client.commands.get('dm').execute(client, message, args);
 }
 else if (command === 'gm') {
-
     client.commands.get('gm').execute(message);
-
 }
 else if (command === 'gn') {
     client.commands.get('gn').execute(message);

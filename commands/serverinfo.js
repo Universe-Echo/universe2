@@ -8,20 +8,28 @@ module.exports = {
         
     const { name, region, memberCount, afkTimeout } = guild
     const icon = guild.iconURL()
+
+    const verificationLevels = {
+      NONE: 'None',
+      LOW: 'Low',
+      MEDIUM: 'Medium',
+      HIGH: 'High',
+      VERY_HIGH: 'Very High'
+  };
     const channels = message.guild.channels.cache;
     const embed = new Discord.MessageEmbed()
       .setTitle(`Server info for`)
       .setThumbnail(guild.iconURL({ dynamic: true, size: 512 }))
-      .addField(" <:PinkMoon925821116608553052:931807859795169331> Owner", `${message.guild.owner}`)
+      .addField("Owner", `${message.guild.owner}`)
       
-      .addField(" <:members:935945505521930271> Member Count", `${message.guild.memberCount}`, true)
+      .addField("⮞Member Count", ` \`\`\`\ ${message.guild.memberCount} \`\`\`\ `, true)
       
-      .addField(" 🙂Emojis", ` ${message.guild.emojis.cache.size} Emojis`)
-      .addField(" 🗓️ Created On", `${message.guild.createdAt.toDateString()}`,)
-      
-      .addField(' <:channel:935944479150579782> Channels', `${message.guild.channels.cache.size}`, true)
-      .addField(" <:role:935946975273160704> Roles", `${message.guild.roles.cache.size} `, true)
-      .addField(' <:boost:930008252597551135> Boosts', ` ${message.guild.premiumSubscriptionCount || '0'}`, true)
+      .addField("⮞Emojis", ` \`\`\`\ ${message.guild.emojis.cache.size} \`\`\`\ `)
+      .addField("⮞Created On", ` \`\`\`\ ${message.guild.createdAt.toDateString()} \`\`\`\ `,)
+      .addField('⮞Verification level', ` \`\`\`\ ${verificationLevels[message.guild.verificationLevel]} \`\`\`\ `)
+      .addField('⮞Channels', ` \`\`\`\ ${message.guild.channels.cache.size} \`\`\`\ `, true)
+      .addField(" Roles", ` \`\`\`\ ${message.guild.roles.cache.size} \`\`\`\ `, true)
+      .addField('Boosts', ` \`\`\`\ ${message.guild.premiumSubscriptionCount || '0'} \`\`\`\ `, true)
       
       .setTimestamp()
       .setFooter(`Id - ${message.guild.id}`)
@@ -29,3 +37,6 @@ module.exports = {
     message.channel.send(embed)
   
     }}
+
+
+    
