@@ -11,7 +11,7 @@ module.exports = {
             let response = await fetch(url);
         
             let json = await response.json();
-            console.log(json);
+           // console.log(json);
         
             const index = Math.floor(Math.random() * json.results.length);
         
