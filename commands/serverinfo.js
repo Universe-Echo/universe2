@@ -30,7 +30,7 @@ module.exports = {
       .addField('⮞Channels', ` \`\`\`\ ${message.guild.channels.cache.size} \`\`\`\ `, true)
       .addField(" Roles", ` \`\`\`\ ${message.guild.roles.cache.size} \`\`\`\ `, true)
       .addField('Boosts', ` \`\`\`\ ${message.guild.premiumSubscriptionCount || '0'} \`\`\`\ `, true)
-      
+      .addField(`Boost Level`,` \`\`\`\ ${message.guild.premiumTier.toString()} \`\`\`\ `, true)
       .setTimestamp()
       .setFooter(`Id - ${message.guild.id}`)
 
