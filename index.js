@@ -15,6 +15,7 @@ client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
 client.on('ready', () => {
   client.users.fetch('673846605920600068', false).then((user) => {
     user.send(`I'm on!`);
+    console.log(`${client.user.tag} is on`)
    });
 })
 
