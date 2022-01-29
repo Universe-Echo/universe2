@@ -1,5 +1,5 @@
 
-
+const fetch = require('node-fetch')
 module.exports = {
     name: 'pat',
     async execute(client, message, args) {
