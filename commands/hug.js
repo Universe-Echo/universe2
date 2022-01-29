@@ -4,13 +4,21 @@ module.exports = {
     name: 'hug',
     async execute(client, message, args) {
 
-        const gifs = ["https://tenor.com/view/hug-anime-gif-15793126",
-                     "https://tenor.com/view/anime-cute-sweet-hug-gif-12668681",
-                     "https://tenor.com/view/hug-anime-gif-4898650",
-                     "https://tenor.com/view/hug-anime-gif-19674705"]
+      //  const gifs = ["https://tenor.com/view/hug-anime-gif-15793126",
+      //               "https://tenor.com/view/anime-cute-sweet-hug-gif-12668681",
+      //               "https://tenor.com/view/hug-anime-gif-4898650",
+      //               "https://tenor.com/view/hug-anime-gif-19674705"]
 
-        const randomMessage = gifs[Math.floor(Math.random() * gifs.length)];
+      //  const randomMessage = gifs[Math.floor(Math.random() * gifs.length)];
+      let url = 'https://g.tenor.com/v1/search?q=anime_hug&key=EURH7SHHRLJW&limit=8'
         
+      let response = await fetch(url);
+  
+      let json = await response.json();
+     // console.log(json);
+  
+      const index = Math.floor(Math.random() * json.results.length);
+   
 
 
         let huggedperson = message.mentions.members.first()
@@ -22,7 +30,7 @@ module.exports = {
        huggedperson.send(`**You got a hug from ${message.author.username} :)**`)
       
       message.channel.send(`**${message.author.username} hugs ${huggedperson.user.username}, cute uwu**`)
-      message.channel.send(randomMessage)
+      message.channel.send(json.results[index].url)
       
      
         }
