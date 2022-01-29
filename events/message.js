@@ -15,7 +15,7 @@ module.exports = (client, message) => {
     if (message.author.bot) return;
 
     const args = message.content.slice(Prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
+    const command = args.shift().toLowerCase();  
 
 if (command === 'ping') {
     client.commands.get('ping').execute(client, message);

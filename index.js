@@ -16,6 +16,10 @@ client.on('ready', () => {
   client.users.fetch('673846605920600068', false).then((user) => {
     user.send(`I'm on!`);
     console.log(`${client.user.tag} is on`)
+    
+    let activities = [ `${client.guilds.cache.size} servers`, `${client.channels.cache.size} channels`, `${client.users.cache.size} users` ], i = 0;
+
+  setInterval(() => client.user.setActivity(`un!help | ${activities[i ++ % activities.length]}`, { type: "WATCHING"}), 5000)
    });
 })
 
@@ -24,6 +28,8 @@ client.on('ready', () => {
     user.send(`I'm on!`);
    });
 })
+
+
 prefix = 'u'
 client.on('message', gotmessage);
 
@@ -87,10 +93,5 @@ for (const File of Files) {
     client.commands.set(command.name, command);
     
     
-}
-
-{
-
-
 }
 

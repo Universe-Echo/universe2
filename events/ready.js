@@ -1,20 +1,11 @@
-module.exports = (client) => {
+ module.exports = (client) => {
     
    const arrayOfStatus = [
-   `Managing ${client.guilds.users.cache.size} members`,
+   `Managing ${client.guilds.cache.size} servers `,
+   `Managing ${client.users.cache.size} members`,
    'Made for The Universe',
    'un!',
    
    ];
 
-    let index = 0;
-    setInterval(() => {
-if(index === arrayOfStatus.length) index = 0;
-
-const status = arrayOfStatus[index];
-
-client.user.setActivity(status);
-index++;
-
-    }, 5000)
 }
