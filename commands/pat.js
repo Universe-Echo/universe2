@@ -28,7 +28,7 @@ module.exports = {
             
        huggedperson.send(`**You got a nice pat from ${message.author.username} :)**`)
       
-      message.channel.send(`**${message.author.username} hugs ${huggedperson.user.username}, cute uwu**`)
+      message.channel.send(`**${message.author.username} pats ${huggedperson.user.username}, cute uwu**`)
       message.channel.send(json.results[index].url)
       
      
