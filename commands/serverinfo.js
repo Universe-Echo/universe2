@@ -37,8 +37,8 @@ module.exports = {
      //.addField(`no. of Voice Channel\'s:`, ` \`\`\`\ ${message.guild.channels.cache.filter(channel => channel.type === 'GUILD_VOICE').size.toString()} \`\`\`\ ` , true ) 
       .addField('⮞Total Channels', ` \`\`\`\css\n${message.guild.channels.cache.size} \`\`\`\ `, true)
       
-      .addField(`Text Channels`, ` \`\`\`\css\n ${message.guild.channels.cache.filter(channel => channel.type === 'text').size} \`\`\`\ `, true)
-      .addField(`Voice Channels`, ` \`\`\`\css\n ${message.guild.channels.cache.filter(channel => channel.type === 'voice').size} \`\`\`\ `, true)
+      .addField(`Text`, ` \`\`\`\css\n ${message.guild.channels.cache.filter(channel => channel.type === 'text').size} \`\`\`\ `, true)
+      .addField(`Voice`, ` \`\`\`\css\n ${message.guild.channels.cache.filter(channel => channel.type === 'voice').size} \`\`\`\ `, true)
       .addField(" Roles", ` \`\`\`\css\n${message.guild.roles.cache.size} \`\`\`\ `, true)
       .addField('Boosts', ` \`\`\`\css\n${message.guild.premiumSubscriptionCount || '0'} \`\`\`\ `, true)
       .addField(`⮞Boost Level`,` \`\`\`\css\n${message.guild.premiumTier.toString()} \`\`\`\ `)
