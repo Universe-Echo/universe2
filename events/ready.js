@@ -1,9 +1,10 @@
 module.exports = (client) => {
     
    const arrayOfStatus = [
-   `${client.channels.cache.size} channels`,
+   `Managing ${client.users.cache.size} members`,
    'Made for The Universe',
    'un!',
+   
    ];
 
     let index = 0;
