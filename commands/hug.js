@@ -1,5 +1,5 @@
 
-
+const fetch = require('node-fetch')
 module.exports = {
     name: 'hug',
     async execute(client, message, args) {
