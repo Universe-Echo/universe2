@@ -39,7 +39,7 @@ async function gotmessage(message) {
 }
 
 else if (message.content === 'hi') {
-    message.reply('hello');
+    message.reply('heyy');
 }
 
 else if (message.content === 'moonie') {
