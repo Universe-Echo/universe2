@@ -17,7 +17,7 @@ client.on('ready', () => {
     user.send(`I'm on!`);
     console.log(`${client.user.tag} is on`)
     
-    let activities = [ `${client.guilds.cache.size} servers`, `${client.channels.cache.size} channels`, `${client.users.cache.size} users` ], i = 0;
+    let activities = [ `${client.guilds.cache.size} servers`, `${client.channels.cache.size} channels`, `3154 users` ], i = 0;
 
   setInterval(() => client.user.setActivity(`un!help | ${activities[i ++ % activities.length]}`, { type: "WATCHING"}), 5000)
    });
