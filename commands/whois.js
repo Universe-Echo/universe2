@@ -20,7 +20,7 @@ module.exports = {
         .addField('__Joined at:__ ',` \`\`\`\ ${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} \`\`\`\ `, true)
         .addField("Account Created On:", ` \`\`\`\ ${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY")} \`\`\`\ ` , true) 
         .addField("Nickname:", ` \`\`\`\ ${member.nickname !== null ? `${member.nickname}` : 'None'} \`\`\`\ `)
-        
+       // .addField(`__Presence:__ `,`${message.guild.member.presence || `offline`}`,true)
         
         .addField("Roles", `${member.roles.cache.map(r => r).join(' ').replace('@everyone', ' ')}`)
         .setFooter(`ID: ${user.id}`)

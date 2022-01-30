@@ -141,4 +141,7 @@ else if (command === 'hug') {
 else if (command === 'pat') {
     client.commands.get('pat').execute(client, message, args);
 }
+else if (command === 'uptime') {
+    client.commands.get('uptime').execute(client, message, args);
+}
 }
