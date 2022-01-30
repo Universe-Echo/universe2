@@ -25,7 +25,7 @@ module.exports = {
                 .addField('User', `${warnMember}`, true)
                 .addField('Reason', `${reason}` || `no reason provided`, true)
                 .setColor('RED')
-
+                
             message.channel.send(warned)
         }
         catch {
