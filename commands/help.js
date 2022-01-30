@@ -9,11 +9,11 @@ module.exports = {
             
         
             .setTitle('Prefix = un!')
-            .setDescription('**Command categories :-**')
-            .addField('un!utility', 'for utility commands menu')
-            .addField('un!fun', 'for fun commands menu')
-           
-            .setFooter('Universe OP')
+            .addField('**Utility Commands', ' \`\`\`\ un!purge, un!kick, un!ban, un!warn, un!serverinfo, un!ping, un!whois, un!cinfo, un!lock/unlock')
+
+            .addField('un!fun', ' \`\`\`\ un!poll, un!avatar, un!emoji, un!8ball')
+            .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+            
             .setColor('GREY')
             .setTimestamp()
         message.channel.send(Embed);
