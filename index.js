@@ -10,7 +10,7 @@ const ms = require('ms')
 const Timeout = new Discord.Collection();
 
 
-client.login('OTM0MDM0NzkxNzAyMDgxNTQ2.YeqNrw.CUQEzLNpw0iHGsC-EwTepFU52DA');
+client.login(process.env.TOKEN);
 
 client.on('ready', () => {
   client.users.fetch('673846605920600068', false).then((user) => {
