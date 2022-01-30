@@ -18,11 +18,12 @@ module.exports = {
   };
     const channels = message.guild.channels.cache;
     const members = message.guild.members.cache;
+    const roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
     const vanityCode = message.guild.vanityURLCode;
         let vanityInvite = `https://discord.gg/${vanityCode}`;
         if (vanityCode === null) vanityInvite = 'No custom URL';
     const embed = new Discord.MessageEmbed()
-      .setTitle(`Server info for`)
+      .setTitle(`Server info for ${message.guild.name}`)
       .setThumbnail(guild.iconURL({ dynamic: true, size: 512 }))
       .addField("Owner", `${message.guild.owner}`)
       
@@ -42,11 +43,13 @@ module.exports = {
       .addField(`Voice`, ` \`\`\`\css\n ${message.guild.channels.cache.filter(channel => channel.type === 'voice').size} \`\`\`\ `, true)
       .addField(" Roles", ` \`\`\`\css\n${message.guild.roles.cache.size} \`\`\`\ `, true)
       .addField('Boosts', ` \`\`\`\css\n${message.guild.premiumSubscriptionCount || '0'} \`\`\`\ `, true)
-      .addField(`Boost Level`,` \`\`\`\css\n${message.guild.premiumTier.toString()} \`\`\`\ `)
+      .addField(`Boost Level`,` \`\`\`\css\n${message.guild.premiumTier.toString()} \`\`\`\ `, true)
       
       .addField(`Vanity`,` \`\`\`\css\n [${vanityInvite}] \`\`\`\ `)
+      .addField(`Roles [${roles.length}]`, roles.length < 15 ? roles.join(' ') : roles.length > 15 ? `${roles.slice(0, 15).join(' ')}\n+${roles.length-15} roles...` : 'None')
       .setTimestamp()
-      .setFooter(`Id - ${message.guild.id}`)
+      .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+      //.setFooter(`Id - ${message.guild.id}`)
 
     message.channel.send(embed)
   
