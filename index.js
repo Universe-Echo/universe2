@@ -9,7 +9,7 @@ var token = process.env.token;
 const ms = require('ms')
 const Timeout = new Discord.Collection();
 
-
+const mongoose = require('mongoose')
 client.login(process.env.TOKEN);
 
 client.on('ready', () => {
@@ -94,4 +94,15 @@ for (const File of Files) {
     
     
 }
+/**const mongooseConnectionString = 'mongodb+srv://echo:echouniverse@universe-bot.s4zfo.mongodb.net/data'
+if (!mongooseConnectionString) return;
 
+mongoose
+ .connect(mongooseConnectionString, {
+ //  userFindAndModify: true,
+   useUnifiedTopology: true,
+   //userNewUrlParser: true,
+
+ })
+ .then(() => console.log('Connected to Mongodb!'))
+ **/
