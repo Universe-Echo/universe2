@@ -1,6 +1,7 @@
 const Discord = module.require('discord.js');
 const moment = require('moment');
 const { MessageEmbed } = require('discord.js')
+
 module.exports = {
      name: 'whois',
 

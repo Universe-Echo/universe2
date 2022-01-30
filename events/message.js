@@ -24,7 +24,7 @@ else if (command === 'embed') {
     client.commands.get('embed').execute(message); 
 }
 else if (command === 'help') {
-    client.commands.get('help').execute(message); 
+    client.commands.get('help').execute(client, message); 
 }
 else if (command === 'poll') {
     client.commands.get('poll').run(client, message, args);
