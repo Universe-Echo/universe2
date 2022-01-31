@@ -30,7 +30,8 @@ module.exports = {
     }
 
     if(member.hasPermission("MANAGE_MESSAGES")){
-        acknowledgements = 'Moderator';
+        if(member.haspermission("ADMINISTRATOR")) return;
+        acknowledgements = 
         permissions.push("Manage Messages");
     }
     
@@ -71,6 +72,8 @@ module.exports = {
         dnd: "Do Not Disturb",
         offline: "Offline/Invisible"
     };
+
+
     let whois = new MessageEmbed()
         .setAuthor(user.username + '#' + user.discriminator, user.displayAvatarURL)
         .setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
@@ -80,14 +83,14 @@ module.exports = {
         .addField('__Joined at:__ ',` \`\`\`\ ${moment(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} \`\`\`\ `, true)
         .addField("Account Created On:", ` \`\`\`\ ${moment.utc(user.createdAt).format("dddd, MMMM Do YYYY, HH:mm:ss")} \`\`\`\ ` , true) 
         .addField("Nickname:", ` \`\`\`\ ${member.nickname !== null ? `${member.nickname}` : 'None'} \`\`\`\ `)
-       // .addField(`__Presence:__ `,`${message.guild.member.presence || `offline`}`,true)
-       .addField(`Roles [${roles.length}]`, roles.length < 15 ? roles.join(' ') : roles.length > 15 ? `${roles.slice(0, 15).join(' ')}\n+${roles.length-15} roles...` : 'None')
-      // .addField("\n__Permissions:__ ", `${permissions.join(` | `)}`, true);
+        // .addField(`__Presence:__ `,`${message.guild.member.presence || `offline`}`,true)
+       .addField(`__Roles [${roles.length}]__`, roles.length < 15 ? roles.join(' ') : roles.length > 15 ? `${roles.slice(0, 15).join(' ')}\n+${roles.length-15} roles...` : 'None')
+        // .addField("\n__Permissions:__ ", `${permissions.join(` | `)}`, true);
       .addField("\n__Permissions:__ ", `${permissions.join(' | ')}`)
-    //  .addField("__Status__",`${status[member.user.presence.status]}`, true)
-  //  .addField("__Playing__", member.presence.activities[0] ? member.presence.activities[0].state : `User isn't have a custom status!`, true)
+        //  .addField("__Status__",`${status[member.user.presence.status]}`, true)
+        //  .addField("__Playing__", member.presence.activities[0] ? member.presence.activities[0].state : `User isn't have a custom status!`, true)
       .addField("\n__Acknowledgements:__ ", `${acknowledgements}`, true)
-       //.addField("Roles", `${member.roles.cache.map(r => r).join(' ').replace('@everyone', ' ')}`)
+        //.addField("Roles", `${member.roles.cache.map(r => r).join(' ').replace('@everyone', ' ')}`)
 
 
        .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
