@@ -17,11 +17,7 @@ module.exports = {
      // console.log(json);
   
       const index = Math.floor(Math.random() * json.results.length);
-  
-  
-  
-      
-
+     
   let huggedperson = message.mentions.members.first()
   let hugperson = message.author || await message.guild.members.fetch(args[0]);
   if (!huggedperson) return message.channel.send('**Tell a person to pat re .__.**') 
