@@ -85,13 +85,11 @@ module.exports = {
         // .addField(`__Presence:__ `,`${message.guild.member.presence || `offline`}`,true)
        .addField(`__Roles [${roles.length}]__`, roles.length < 15 ? roles.join(' ') : roles.length > 15 ? `${roles.slice(0, 15).join(' ')}\n+${roles.length-15} roles...` : 'None')
         // .addField("\n__Permissions:__ ", `${permissions.join(` | `)}`, true);
-      .addField("\n__Permissions:__ ", `${permissions.join(' | ')}`)
+       .addField("\n__Permissions:__ ", `${permissions.join(' | ')}`)
         //  .addField("__Status__",`${status[member.user.presence.status]}`, true)
         //  .addField("__Playing__", member.presence.activities[0] ? member.presence.activities[0].state : `User isn't have a custom status!`, true)
-      .addField("\n__Acknowledgements:__ ", `${acknowledgements}`, true)
+       .addField("\n__Acknowledgements:__ ", `${acknowledgements}`, true)
         //.addField("Roles", `${member.roles.cache.map(r => r).join(' ').replace('@everyone', ' ')}`)
-
-
        .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
        .setTimestamp();
 
