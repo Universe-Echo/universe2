@@ -5,7 +5,7 @@ const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
 require('dotenv').config()
-var token = process.env.token;
+var token = process.env.TOKEN;
 const ms = require('ms')
 const Timeout = new Discord.Collection();
 
