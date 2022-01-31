@@ -31,8 +31,8 @@ module.exports = {
 
     if(member.hasPermission("MANAGE_MESSAGES")){
         if(member.hasPermission("ADMINISTRATOR"))
-        permissions.push("Administrator");
-        acknowledgements = 
+        acknowledgements = 'Administrator';
+        acknowledgements = 'Moderator'
         permissions.push("Manage Messages");
     }
     
