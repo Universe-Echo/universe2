@@ -1,6 +1,6 @@
 
 const { Client, Intents } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }); 
 const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
@@ -10,7 +10,7 @@ const ms = require('ms')
 const Timeout = new Discord.Collection();
 
 const mongoose = require('mongoose')
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN); // env se tken lega direct
 
 client.on('ready', () => {
   client.users.fetch('673846605920600068', false).then((user) => {
