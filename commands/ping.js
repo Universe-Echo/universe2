@@ -17,7 +17,7 @@ module.exports = {
             .setTitle("Ping")
             .addField(`API Ping:`, ` \`\`\`\py\n ${apiPing} \`\`\`\ `)
             .addField(`Bot Ping:`,` \`\`\`\py\n ${botPing} \`\`\`\ `)
-            message.channel.send(ping)
+            message.lineReply(ping)
                 m.edit(`Api Latency: ${apiPing}ms\nBot Latency: ${botPing}ms`)
                 m.delete();
             }
