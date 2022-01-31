@@ -10,6 +10,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
     "@discordjs/voice": "^0.8.0",
+    "discord-reply": "^0.1.2",
     "discord.js": "^12.5.3",
     "distube": "^2.8.18",
     "dotenv": "^10.0.0",

@@ -1,5 +1,6 @@
 
 const { Client, Intents } = require('discord.js');
+require('discord-reply');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }); 
 const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js');
@@ -29,12 +30,12 @@ client.on('ready', () => {
    });
 })
 
-client.on('ready', () => {
+/**client.on('ready', () => {
   client.users.fetch('917701176403824691', false).then((user) => {
     user.send(`I'm on!`);
    });
 })
-
+**/
 
 prefix = 'u'
 client.on('message', gotmessage);
@@ -43,7 +44,7 @@ async function gotmessage(message) {
 
   if (message.author.bot) return;
   if (message.content === 'hlo') {
-    message.reply('hlu')
+    message.lineReply('hlu')
 }
 
   else if (message.content === 'sup') {
