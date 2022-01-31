@@ -1,4 +1,4 @@
-
+const cooldown = new Set();
 const fetch = require('node-fetch')
 module.exports = {
     name: 'hug',
