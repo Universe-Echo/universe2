@@ -10,7 +10,11 @@ module.exports = {
       //               "https://tenor.com/view/hug-anime-gif-19674705"]
 
       //  const randomMessage = gifs[Math.floor(Math.random() * gifs.length)];
-      let url = 'https://g.tenor.com/v1/search?q=anime_hug&key=EURH7SHHRLJW&limit=8'
+      if (cooldown.has(message.author.id)) {
+        message.channel.send('Pls wait 10 secs before using that command....').then(msg=>msg.delete({timeout:"1000"/*Time until delete in milliseconds*/})
+       
+        )}
+        let url = 'https://g.tenor.com/v1/search?q=anime_hug&key=EURH7SHHRLJW&limit=8'
         
       let response = await fetch(url);
   
