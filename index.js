@@ -48,11 +48,11 @@ async function gotmessage(message) {
 }
 
   else if (message.content === 'sup') {
-  message.reply('Just doing my job, wbu?')
+  message.lineReply('Just doing my job, wbu?')
 }
 
 else if (message.content === 'hi') {
-    message.reply('heyy');
+    message.lineReply('heyy');
 }
 
 else if (message.content === 'moonie') {
@@ -67,10 +67,10 @@ else if (message.content === 'boom') {
   message.delete();
 }
 else if (message.content === 'ping') {
-  message.channel.send('Pong!!')
+  message.lineReply('Pong!!')
 }
  else if(message.content === 'ding') {
-   message.channel.send('dongg')
+   message.lineReply('dongg')
  }
 }
 
