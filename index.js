@@ -59,7 +59,9 @@ else if (message.content === 'boom') {
   message.channel.send('https://cdn.discordapp.com/emojis/886178531976024094.gif?v=1&size=64')
   message.delete();
 }
-
+else if (message.content === 'ping') {
+  message.reply('Pong!!')
+}
  
 }
 
