@@ -25,7 +25,7 @@ module.exports = {
         let hugperson = message.author || await message.guild.members.fetch(args[0]);
         if (!huggedperson) return message.channel.send('**Tell a person to hug re .__.**') 
         if (huggedperson === message.member) return message.channel.send('You wanna hug yourself ._.');
-        if (huggedperson === bot) return message.channel.send('You cannot a bot -__-');
+      //  if (huggedperson === bot) return message.channel.send('You cannot a bot -__-');
         try {
             
        huggedperson.send(`**You got a hug from ${message.author.username} :)**`)
