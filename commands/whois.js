@@ -25,6 +25,7 @@ module.exports = {
     }
     
     if(member.hasPermission("ADMINISTRATOR")){
+        acknowledgements = 'Administrator';
         permissions.push("Administrator");
     }
 
