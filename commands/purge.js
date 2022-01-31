@@ -1,3 +1,4 @@
+const { MessageEmbed } = require('discord.js')
 module.exports = {
     name: 'purge',
     async execute(Client, message, args) {
@@ -9,18 +10,43 @@ module.exports = {
         
         let amount = args[0];
 
-        if (isNaN(amount)) return message.channel.send('Pls enter the number of messages to be purged')
-        if (amount < 1) return message.channel.send('Pls provide a number greater than 1')
-        if (amount > 99) amount = 99;
+        if (!args[0])
+        return message.channel.send(`Please Give Me Amounts Of Messages!`);
+  
+      if (isNaN(args[0]))
+        return message.channel.send(`Please Give Me Number Value!`);
+  
+      if (args[0] < 1)
+        return message.channel.send(
+          `You Can Delete ${args[0]} By Your Self Its Not Too Many Messages!`
+        );
+  
+      if (args[0] > 100)
+        return message.channel.send(
+          `I Can't Delete ${args[0]} Because Of Discord Limit!`
+        );
+        let Reason = args.slice(1).join(" ") || "No Reason Provided!";
+
         try {
-            message.channel.bulkDelete(parseInt(amount) + 1, true).then(m => {
-                message.channel.send(`${parseInt(m.size - 1)} messages purged!`).then(m => {
-                    m.delete({ timeout: 1000 });
-                })
-            })
-        } catch {
-            return message.channel.send('There was a problem while purging, pls try again')
+            
+            message.channel.bulkDelete(parseInt(amount), true).then(Message => {
+                let embed = new MessageEmbed()
+                  .setColor(`#00ffcc`)
+                  .setTitle(`Messages Deleted!`)
+                  .addField(`Moderator`, ` \`\`\`\css\n${message.author.tag} (${message.author.id}) \`\`\`\ `)
+                  .addField(`Channel`, ` \`\`\`\css\n${message.channel.name} (${message.channel.id}) \`\`\`\ `)
+                  .addField(`Deleted Messages`, ` \`\`\`\css\n${Message.size}\`\`\`\ `)
+                  .addField(`Reason`, ` \`\`\`\css\n [ ${Reason} ] \`\`\`\ `)
+                  .setFooter(`Requested by ${message.author.username}`)
+                  .setTimestamp();
+                return message.channel
+                  .send(embed)
+                  .then(msg => msg.delete({ timeout: 5000 }));
+              });
+        
+            
+        } catch (e) {
+            return message.channel.send(`there was an error:\n${e.message}`)
         }
     }
-
 }

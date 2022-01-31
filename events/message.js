@@ -8,7 +8,7 @@ const { Collection } = require('discord.js')
     const Timeout = new Collection();
     
 module.exports = (client, message) => {
-    const Prefix = 'un!';
+    const Prefix = '>';
     //command handler and event
    
     if (!message.content.startsWith(Prefix)) return;

@@ -20,7 +20,7 @@ client.on('ready', () => {
     
     let activities = [ `${client.guilds.cache.size} servers`, `${client.channels.cache.size} channels`, `3,407 users` ], i = 0;
 
-  setInterval(() => client.user.setActivity(`un!help | ${activities[i ++ % activities.length]}`, { type: "WATCHING"}), 5000)
+  setInterval(() => client.user.setActivity(`>help | ${activities[i ++ % activities.length]}`, { type: "WATCHING"}), 5000)
    });
 })
 
