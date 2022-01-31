@@ -30,7 +30,7 @@ module.exports = {
     }
 
     if(member.hasPermission("MANAGE_MESSAGES")){
-        if(member.haspermission("ADMINISTRATOR")) return;
+        if(member.hasPermission("ADMINISTRATOR")) return;
         acknowledgements = 
         permissions.push("Manage Messages");
     }
@@ -66,6 +66,7 @@ module.exports = {
     if(member.user.id == message.guild.ownerID){
         acknowledgements = 'Server Owner';
     }
+
     const status = {
         online: "Online",
         idle: "Idle",
