@@ -1,5 +1,6 @@
 
 const fetch = require('node-fetch')
+const cooldown = new Set()
 module.exports = {
     name: 'hug',
     async execute(client, message, args) {
@@ -38,15 +39,16 @@ module.exports = {
       message.channel.send(`**${message.author.username} hugs ${huggedperson.user.username}, cute uwu**`)
       message.channel.send(json.results[index].url)
       
-      cooldown.add(message.author.id);
-    setTimeout(() => {
-        cooldown.delete(message.author.id)
-    }, 10000);
+    
      
         }
         catch (e) {
             return message.channel.send(`there was an error:\n${e.message}`)
       }
+      cooldown.add(message.author.id);
+        setTimeout(() => {
+            cooldown.delete(message.author.id)
+        }, 10000);
     }
     
 
