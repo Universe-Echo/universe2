@@ -34,7 +34,7 @@ module.exports = {
       .addField('Verification level', ` \`\`\`\css\n [${verificationLevels[message.guild.verificationLevel]}] \`\`\`\ `, true)
       // .addField(`no. of Text Channel\'s:`, ` \`\`\`\ ${message.guild.channels.cache.filter(channel => channel.type === 'GUILD_TEXT').size.toString()} \`\`\`\ ` )
       //.addField(`no. of Voice Channel\'s:`, ` \`\`\`\ ${message.guild.channels.cache.filter(channel => channel.type === 'GUILD_VOICE').size.toString()} \`\`\`\ ` , true ) 
-      .addField('Total Channels',  ` \`\`\`\css\n${message.guild.channels.cache.size} \`\`\`\ `, true)
+      .addField('Total Channels',  ` \`\`\`\css\n${message.guild.channels.cache.size} \`\`\`\ `)
       .addField(`Text`, ` \`\`\`\css\n ${message.guild.channels.cache.filter(channel => channel.type === 'text').size} \`\`\`\ `, true)
       .addField(`Voice`, ` \`\`\`\css\n ${message.guild.channels.cache.filter(channel => channel.type === 'voice').size} \`\`\`\ `, true)
       .addField(" Roles", ` \`\`\`\css\n${message.guild.roles.cache.size} \`\`\`\ `, true)
