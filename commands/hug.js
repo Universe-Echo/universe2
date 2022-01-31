@@ -14,7 +14,8 @@ module.exports = {
         message.channel.send('Pls wait 10 secs before using that command....').then(msg=>msg.delete({timeout:"1000"/*Time until delete in milliseconds*/})
        
         )}
-        let url = 'https://g.tenor.com/v1/search?q=anime_hug&key=EURH7SHHRLJW&limit=8'
+        else {
+          let url = 'https://g.tenor.com/v1/search?q=anime_hug&key=EURH7SHHRLJW&limit=8'
         
       let response = await fetch(url);
   
@@ -41,6 +42,7 @@ module.exports = {
         }
         catch (e) {
             return message.channel.send(`there was an error:\n${e.message}`)
+      }
       }
       }
     }
