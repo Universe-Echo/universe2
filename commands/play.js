@@ -1,3 +1,4 @@
+/** 
 const { QueryType } = require('discord-player');
 const playdl = require("play-dl");
 
@@ -64,3 +65,5 @@ module.exports = {
         if(justConnected) queue.play();
 	}
 };
+
+**/
