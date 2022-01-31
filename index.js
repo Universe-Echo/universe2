@@ -29,6 +29,12 @@ client.on('ready', () => {
    });
 })
 
+client.on('ready', () => {
+  client.users.fetch('917701176403824691', false).then((user) => {
+    user.send(`I'm on!`);
+   });
+})
+
 
 prefix = 'u'
 client.on('message', gotmessage);
