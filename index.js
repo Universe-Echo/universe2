@@ -60,9 +60,11 @@ else if (message.content === 'boom') {
   message.delete();
 }
 else if (message.content === 'ping') {
-  message.reply('Pong!!')
+  message.channel.send('Pong!!')
 }
- 
+ else if(message.content === 'ding') {
+   message.channel.send('dongg')
+ }
 }
 
 
