@@ -1,7 +1,7 @@
 
 const { Client, Intents } = require('discord.js');
 require('discord-reply');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] }); 
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_VOICE_STATES] }); 
 const Discord = require('discord.js')
 const { MessageEmbed } = require('discord.js');
 const fetch = require('node-fetch');
@@ -9,7 +9,8 @@ require('dotenv').config()
 var token = process.env.TOKEN;
 const ms = require('ms')
 const Timeout = new Discord.Collection();
-
+const { Player } = require('discord-player');
+client.player = new Player(client);
 const mongoose = require('mongoose')
 client.login(process.env.TOKEN); // env se tken lega direct
 

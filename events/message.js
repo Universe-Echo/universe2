@@ -144,4 +144,11 @@ else if (command === 'pat') {
 else if (command === 'uptime') {
     client.commands.get('uptime').execute(client, message, args);
 }
+else if (command === 'role') {
+    client.commands.get('role').execute(client, message, args);
+}
+else if (command === 'weather') {
+    client.commands.get('weather').execute(client, message, args);
+}
+
 }

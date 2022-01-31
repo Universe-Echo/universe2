@@ -1,34 +1,66 @@
+const { QueryType } = require('discord-player');
+const playdl = require("play-dl");
+
 module.exports = {
-    name: 'play',
+	name: "play",
+    aliases: ['p'],
+	description: "Plays the song specified",
+	permission: "SEND_MESSAGES",
+	async execute(message, args, client) {
+      //  if(!message.member.voice.channelId)
+         //   return message.reply({ embeds: [{ description: `You are not in a voice channel!`, color: 0xb84e44 }] });
+      //  if(message.guild.me.voice.channelId && message.member.voice.channelId !== message.guild.me.voice.channelId)
+          //  return message.reply({ embeds: [{ description: `You are not in my voice channel!`, color: 0xb84e44 }] });
+        if(!args[1]) {
+            const queue = client.player.getQueue(message.guild);
+            if(queue && queue.playing) { // resume
+                const paused = queue.setPaused(false);
+                if(paused) message.react('▶️');
+            }
+            return;
+        }
+        
+        if(!message.guild.me.permissionsIn(message.member.voice.channel).has(client.requiredVoicePermissions)) return;
 
-   async execute(client, message, args) {
+        let query = args.slice(1).join(" ");
+        const searchResult = await client.player.search(query, { requestedBy: message.author, searchEngine: QueryType.AUTO })
+        if (!searchResult || !searchResult.tracks.length)
+            return message.channel.send({ embeds: [{ description: `No results found!`, color: 0xb84e44 }] });
 
-const ytdl = require('ytdl-core');
-const {
-	AudioPlayerStatus,
-	StreamType,
-	createAudioPlayer,
-	createAudioResource,
-	joinVoiceChannel,
-} = require('@discordjs/voice');
+        const queue = await client.player.createQueue(message.guild,{ metadata: { channel: message.channel },
 
-// ...
-const connection = joinVoiceChannel({
-    channelId: message.channelId,
-    guildId: message.guildId,
-    adapterCreator: message.guild.voiceAdapterCreator
-});
+            bufferingTimeout: 1000,
+            disableVolume: false, // disabling volume controls can improve performance
+            leaveOnEnd: true,
+			leaveOnStop: true,
+			//leaveOnEmpty: true,
+			//leaveOnEmptyCooldown: 300000,
 
-
-const stream = ytdl('https://www.youtube.com/watch?v=60ItHLz5WEA', { filter: 'audioonly' });
-const resource = createAudioResource(stream, { inputType: StreamType.Arbitrary });
-const player = createAudioPlayer();
-
-player.play(resource);
-connection.subscribe(player);
-
-player.on(AudioPlayerStatus.Idle, () => connection.destroy());
-
-}}
-
-///*
+            async onBeforeCreateStream(track, source, _queue) {
+                let vid;
+                try {
+                    if(track.url.includes("youtube.com"))
+                        vid = (await playdl.stream(track.url, { discordPlayerCompatibility : true })).stream;
+                    else
+                        vid = (await playdl.stream(await playdl.search(`${track.author} ${track.title} lyric`, { limit : 1, source : { youtube : "video" } }).then(x => x[0].url), { discordPlayerCompatibility : true })).stream;
+                } catch {
+                    queue.metadata.channel.send({ embeds: [{ description: `An error occurred while attempting to play [${track.title}](${track.url}).`, color: 0xb84e44 }] });
+                    vid = (await playdl.stream("https://www.youtube.com/watch?v=Wch3gJG2GJ4", { quality: 0, discordPlayerCompatibility : true })).stream; // a 1 second video. if u have a better way to do this, feel free to open a PR/issue :)
+                }
+                return vid;
+            }
+        });
+        let justConnected;
+        try {
+            if (!queue.connection) {
+                justConnected = true;
+                await queue.connect(message.member.voice.channel);
+            }
+        } catch {
+            client.player.deleteQueue(message.guild);
+            return message.channel.send({ embeds: [{ description: `Could not join your voice channel!`, color: 0xb84e44 }] });
+        }
+        await searchResult.playlist ? queue.addTracks(searchResult.tracks) : queue.addTrack(searchResult.tracks[0]);
+        if(justConnected) queue.play();
+	}
+};
