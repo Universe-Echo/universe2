@@ -30,6 +30,7 @@ module.exports = {
     }
 
     if(member.hasPermission("MANAGE_MESSAGES")){
+        acknowledgements = 'Moderator';
         permissions.push("Manage Messages");
     }
     
