@@ -33,7 +33,7 @@ module.exports = {
       .addField(`Animated`, ` \`\`\`\css\n${message.guild.emojis.cache.filter(emoji => emoji.animated).size.toString()} \`\`\`\ `, true)
       .addField("Created On", ` \`\`\`\css\n [${message.guild.createdAt.toDateString()}] \`\`\`\ `,)
       
-      .addField('Verification level', ` \`\`\`\css\n [${verificationLevels[message.guild.verificationLevel]}] \`\`\`\ `)
+      .addField('Verification level', ` \`\`\`\css\n [${verificationLevels[message.guild.verificationLevel]}] \`\`\`\ `, true)
      
       // .addField(`no. of Text Channel\'s:`, ` \`\`\`\ ${message.guild.channels.cache.filter(channel => channel.type === 'GUILD_TEXT').size.toString()} \`\`\`\ ` )
      //.addField(`no. of Voice Channel\'s:`, ` \`\`\`\ ${message.guild.channels.cache.filter(channel => channel.type === 'GUILD_VOICE').size.toString()} \`\`\`\ ` , true ) 
