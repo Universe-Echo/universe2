@@ -1,40 +1,51 @@
-
+const cooldown = new Set();
 const fetch = require('node-fetch')
 module.exports = {
     name: 'pat',
     async execute(client, message, args) {
        
-
-
-            let url = 'https://g.tenor.com/v1/search?q=anime_pat&key=EURH7SHHRLJW&limit=8'
+      if (cooldown.has(message.author.id)) {
+        message.channel.send('Pls wait 10 secs before using that command....').then(msg=>msg.delete({timeout:"1000"/*Time until delete in milliseconds*/})
+       
+        )}
+    else {
+      let url = 'https://g.tenor.com/v1/search?q=anime_pat&key=EURH7SHHRLJW&limit=8'
         
-            let response = await fetch(url);
-        
-            let json = await response.json();
-           // console.log(json);
-        
-            const index = Math.floor(Math.random() * json.results.length);
-        
-        
-        
-            
-
-        let huggedperson = message.mentions.members.first()
-        let hugperson = message.author || await message.guild.members.fetch(args[0]);
-        if (!huggedperson) return message.channel.send('**Tell a person to pat re .__.**') 
-        if (huggedperson === message.member)
-         message.channel.send('You wanna pat yourself fine');
-        try {
-            
-       huggedperson.send(`**You got a nice pat from ${message.author.username} :)**`)
+      let response = await fetch(url);
+  
+      let json = await response.json();
+     // console.log(json);
+  
+      const index = Math.floor(Math.random() * json.results.length);
+  
+  
+  
       
-      message.channel.send(`**${message.author.username} pats ${huggedperson.user.username}, cute uwu**`)
-      message.channel.send(json.results[index].url)
+
+  let huggedperson = message.mentions.members.first()
+  let hugperson = message.author || await message.guild.members.fetch(args[0]);
+  if (!huggedperson) return message.channel.send('**Tell a person to pat re .__.**') 
+  if (huggedperson === message.member)
+   message.channel.send('You wanna pat yourself fine');
+  try {
       
+ huggedperson.send(`**You got a nice pat from ${message.author.username} :)**`)
+
+message.channel.send(`**${message.author.username} pats ${huggedperson.user.username}, cute uwu**`)
+message.channel.send(json.results[index].url)
+
+
+  }
+  catch (e) {
+      return message.channel.send(`there was an error:\n${e.message}`)
+}
+    }
+      cooldown.add(message.author.id);
+        setTimeout(() => {
+            cooldown.delete(message.author.id)
+        }, 10000);
+
      
-        }
-        catch (e) {
-            return message.channel.send(`there was an error:\n${e.message}`)
-      }
       }
     }
+  
