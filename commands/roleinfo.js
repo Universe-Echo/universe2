@@ -55,7 +55,7 @@ module.exports = {
 
 
 
-        const position = `\`${message.guild.roles.cache.size - role.position}\`/\`${message.guild.roles.cache.size}\``;
+        
         
         const embed = new MessageEmbed()
         
