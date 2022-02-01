@@ -162,4 +162,7 @@ else if (command === 'tops') {
 else if (command === 'av') {
     client.commands.get('av').execute(client, message, args);
 }
+else if (command === 'botinfo') {
+    client.commands.get('botinfo').execute(client, message, args);
+}
 }
