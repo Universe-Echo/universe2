@@ -48,7 +48,8 @@ module.exports = {
       )
       .setColor('GREEN')
       .addField(
-        "System",
+        "__System__",
+        
         `**❯ Platform:** ${process.platform}
         
         **❯ CPU:**
