@@ -19,7 +19,7 @@ const nickEmbed = new MessageEmbed()
 
 message.channel.send(nickEmbed)
 }
-     catch (err) {
+     catch (error) {
 
         message.channel.send(`I cant change the nickname of ${member.username}`)
 
