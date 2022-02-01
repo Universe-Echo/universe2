@@ -149,6 +149,7 @@ else if (command === 'role') {
 }
 else if (command === 'weather') {
     client.commands.get('weather').execute(client, message, args);
-}
 
+
+}
 }

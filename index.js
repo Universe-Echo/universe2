@@ -12,6 +12,7 @@ const Timeout = new Discord.Collection();
 const { Player } = require('discord-player');
 client.player = new Player(client);
 const mongoose = require('mongoose')
+
 client.login(process.env.TOKEN); // env se tken lega direct
 
 client.on('ready', () => {
@@ -118,3 +119,4 @@ mongoose
  })
  .then(() => console.log('Connected to Mongodb!'))
  **/
+
