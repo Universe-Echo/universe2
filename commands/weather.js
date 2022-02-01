@@ -15,7 +15,7 @@ try {
  
 let embed = new discord.MessageEmbed()
 .setTitle(`Weather - ${result[0].location.name}`)
-.setColor("#ff2050")
+.setColor("RANDOM")
 .setDescription("Temperature units can maybe differ some time")
 .addField("Temperature", ` \`\`\`\css\n ${result[0].current.temperature}°C \`\`\`\ `, true)
 .addField("Sky Text", ` \`\`\`\  ${result[0].current.skytext} \`\`\`\ `, true)
