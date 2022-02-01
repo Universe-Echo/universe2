@@ -147,9 +147,12 @@ else if (command === 'uptime') {
 else if (command === 'role') {
     client.commands.get('role').execute(client, message, args);
 }
-else if (command === 'weather') {
-    client.commands.get('weather').execute(client, message, args);
+else if (command === 'nick') {
+    client.commands.get('nick').execute(client, message, args);
 
 
+}
+else if (command === 'nick') {
+    client.commands.get('nick').execute(client, message, args);
 }
 }

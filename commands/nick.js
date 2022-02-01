@@ -1,0 +1,28 @@
+const { MessageEmbed } = require('discord.js')
+
+module.exports = {
+    name: 'nick',
+    async execute(client, message, args) {
+
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You dont have the correct perms to use this command')
+        const member = message.mentions.members.first() || message.author;
+
+        const argument = args.slice(1).join(' ')
+
+        if(!argument) return message.channel.send('Please specify a nickname....')
+
+        try {
+member.setNickname(argument)
+
+const nickEmbed = new MessageEmbed()
+.setDescription(`Change nickname of ${member.user.username} to ${argument}`)      
+
+message.channel.send(nickEmbed)
+}
+     catch (err) {
+
+        message.channel.send(`I cant change the nickname of ${member.username}`)
+
+     }}
+    
+    }
