@@ -103,7 +103,9 @@ for (const EventFile of EventFiles) {
 const Files = fs.readdirSync('./commands/').filter(f => f.endsWith('.js'));
 for (const File of Files) {
     const command = require('./commands/' + File);
+    
     client.commands.set(command.name, command);
+    console.log(`✅ Loading command ${command.name}`);
     
     
 }
