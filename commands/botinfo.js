@@ -29,7 +29,7 @@ module.exports = {
       .setThumbnail(client.user.displayAvatarURL())
       .setColor('GREEN')
       .addField(
-        "General",
+        "__General__",
         `**❯ Client:** ${client.user.tag} (${client.user.id})
         **❯ Commands:** ${client.commands.size}
         **❯ Servers:** ${client.guilds.cache.size.toLocaleString()} 
@@ -49,7 +49,7 @@ module.exports = {
       .setColor('GREEN')
       .addField(
         "__System__",
-        
+
         `**❯ Platform:** ${process.platform}
         
         **❯ CPU:**
