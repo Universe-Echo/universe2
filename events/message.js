@@ -165,4 +165,7 @@ else if (command === 'av') {
 else if (command === 'botinfo') {
     client.commands.get('botinfo').execute(client, message, args);
 }
+else if (command === 'roleinfo') {
+    client.commands.get('roleinfo').execute(client, message, args);
+}
 }
