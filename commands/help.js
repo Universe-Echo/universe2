@@ -15,8 +15,9 @@ module.exports = {
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
             
             .setColor('GREY')
+            .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
             .setTimestamp()
-        message.channel.send(Embed);
+        message.lineReply(Embed);
     
     }
 }
