@@ -61,7 +61,7 @@ module.exports = {
             else finalPermissions.push(`❌ ${permissions[permission]}`);
         }
 
-        const position = `\`${interaction.guild.roles.cache.size - role.position}\`/\`${interaction.guild.roles.cache.size}\``;
+        const position = `\`${message.guild.roles.cache.size - role.position}\`/\`${message.guild.roles.cache.size}\``;
         
         const embed = new MessageEmbed()
         
