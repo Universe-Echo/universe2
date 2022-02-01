@@ -13,9 +13,8 @@ module.exports = {
             .setThumbnail(client.user.displayAvatarURL({ dynamic: true, size: 512 }))
             .addField('__Fun Commands__', ' \`\`\`\ >poll, >avatar, >emoji, >8ball \`\`\`\ ')
             .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
-            
             .setColor('GREY')
-            .setFooter(`Requested By: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+            
             .setTimestamp()
         message.lineReply(Embed);
     
