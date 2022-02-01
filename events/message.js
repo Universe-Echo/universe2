@@ -159,4 +159,7 @@ else if (command === 'weather') {
 else if (command === 'tops') {
     client.commands.get('tops').execute(client, message, args);
 }
+else if (command === 'av') {
+    client.commands.get('av').execute(client, message, args);
+}
 }
