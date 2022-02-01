@@ -54,12 +54,6 @@ module.exports = {
         }
 
 
-        const rolePermissions = role.permissions.toArray();
-        const finalPermissions = [];
-        for (const permission in permissions) {
-            if (rolePermissions.includes(permission)) finalPermissions.push(`✔️ ${permissions[permission]}`);
-            else finalPermissions.push(`❌ ${permissions[permission]}`);
-        }
 
         const position = `\`${message.guild.roles.cache.size - role.position}\`/\`${message.guild.roles.cache.size}\``;
         
@@ -75,7 +69,7 @@ module.exports = {
         .addField('Visible', yesno[role.hoist], true)
         .addField('Color', `\`${role.hexColor.toUpperCase()}\``, true)
         .addField('Creation Date', `\`${moment(role.createdAt).format('DD/MMM/YYYY')}\``, true)
-        .addField('Permissions', `\`\`\`diff\n${finalPermissions.join('\n')}\`\`\``)
+    //    .addField('Permissions', `\`\`\`diff\n${finalPermissions.join('\n')}\`\`\``)
 
         message.channel.send(embed)
 
