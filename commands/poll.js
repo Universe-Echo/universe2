@@ -15,7 +15,7 @@ if(!question) {
 const embed = new Discord.MessageEmbed()
 .setTitle('Poll')
 .addField('Author', message.author)
-.setDescription(`${question}`)
+.setDescription(` \`\`\`\ ${question} \`\`\`\ `)
 .setColor('BLACK')
 
 let msg = await pollchannel.send(embed)

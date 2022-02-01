@@ -8,7 +8,7 @@ module.exports = {
     async execute(client, message, args)  {
         if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('You dont have the perms to do this!')
 
-        const reason = args.slice(1).join(' ');
+        const reason = args.slice(1).join(' ') || 'no reason provided'
         if (!args[0]) return message.channel.send("Please provide a valid user..")
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0])
 
@@ -21,8 +21,8 @@ module.exports = {
 
              const banned = new MessageEmbed()
              .setTitle("**User Unbanned**")
-             .addField('User', bannedMember.user.tag, true)
-             .addField('Reason', reason || 'No reason provided!')
+             .addField('User', ` \`\`\`\ ${bannedMember.user.tag} \`\`\`\ `, true)
+             .addField('Reason', ` \`\`\`\ ${reason} \`\`\`\ `)
              .setColor('BLUE')
 
              message.channel.send(banned)
