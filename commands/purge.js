@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js')
+const cooldown = new Set();
 module.exports = {
     name: 'purge',
     async execute(client, message, args) {
