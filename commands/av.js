@@ -1,7 +1,7 @@
   
 const { MessageEmbed } = require('discord.js')
 module.exports = {
-    name: 'avatar',
+    name: 'av',
     async execute(client, message, args) {
         const member = message.mentions.members.first() || message.member;
      const avatar =   new MessageEmbed()
