@@ -60,7 +60,7 @@ module.exports = {
         const embed = new MessageEmbed()
         
         .setTitle(`Role Info !!`)
-        .setThumbnail(interaction.guild.iconURL({dynamic: true, size: 1024}))
+        .setThumbnail(message.guild.iconURL({dynamic: true, size: 1024}))
         .addField('Name', `<@&${role.id}>`, true)
         .addField('ID', `\`${role.id}\``, true)
         .addField('Position', `${position}`, true)
