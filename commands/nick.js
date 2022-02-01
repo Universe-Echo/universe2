@@ -15,7 +15,7 @@ module.exports = {
 member.setNickname(argument)
 
 const nickEmbed = new MessageEmbed()
-.setDescription(`Change nickname of ${member.user.username} to ${argument}`)      
+.setDescription(`Changed nickname of ${member.user.username} to ${argument}`)      
 
 message.channel.send(nickEmbed)
 }
