@@ -23,7 +23,7 @@ module.exports = {
 
             const banned = new MessageEmbed()
                 .setDescription('**User Banned!**')
-                .addField('User', ` \`\`\`\ ${banMember} \`\`\`\ `)
+                .addField('User', ` \`\`\`\ ${banMember.user.tag} \`\`\`\ `)
                 .addField('Reason', ` \`\`\`\css\n [ ${reason} ] \`\`\`\ `)
                 .setColor('RED')
 
