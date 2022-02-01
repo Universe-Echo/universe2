@@ -10,7 +10,7 @@ module.exports = {
             return message.channel.send('You dont have the perms to do this!')
         }
         try {
-            const reason = args.slice(1).join('  ');
+            const reason = args.slice(1).join('  ') || 'no reason provided'
 
             if (!args[0]) return message.channel.send('Please tell me a user to ban!');
             const banMember = message.mentions.members.first() || await message.guild.members.fetch(args[0]);
@@ -23,8 +23,8 @@ module.exports = {
 
             const banned = new MessageEmbed()
                 .setDescription('**User Banned!**')
-                .addField('User', `${banMember}`, true)
-                .addField('Reason', `${reason}` || `no reason provided`, true)
+                .addField('User', ` \`\`\`\ ${banMember} \`\`\`\ `)
+                .addField('Reason', ` \`\`\`\css\n [ ${reason} ] \`\`\`\ `)
                 .setColor('RED')
 
             message.channel.send(banned)

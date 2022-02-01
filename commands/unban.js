@@ -22,7 +22,7 @@ module.exports = {
              const banned = new MessageEmbed()
              .setTitle("**User Unbanned**")
              .addField('User', ` \`\`\`\ ${bannedMember.user.tag} \`\`\`\ `, true)
-             .addField('Reason', ` \`\`\`\ ${reason} \`\`\`\ `)
+             .addField('Reason', ` \`\`\`\css\n [ ${reason} ] \`\`\`\ `)
              .setColor('BLUE')
 
              message.channel.send(banned)
