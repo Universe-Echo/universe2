@@ -18,7 +18,7 @@ client.login(process.env.TOKEN); // env se tken lega direct
 client.on('ready', () => {
   client.users.fetch('673846605920600068', false).then((user) => {
     user.send(`I'm on!`);
-    console.log(`${client.user.tag} is on`)
+    console.log(`❤️ ${client.user.tag} is on`)
     
     let activities = [ `${client.guilds.cache.size} servers`, `${client.channels.cache.size} channels`, `3,407 users` ], i = 0;
 
