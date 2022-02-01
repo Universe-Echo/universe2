@@ -13,7 +13,7 @@ module.exports = {
   ],
   async execute(client, message, args) {
         try {
-    const role = interaction.guild.roles.cache.get(args[0]);
+    const role = message.guild.roles.cache.get(args[0]);
      const permissions = {
             "ADMINISTRATOR": "Administrator",
             "VIEW_AUDIT_LOG": "View Audit Log",
@@ -82,7 +82,7 @@ module.exports = {
 
     } catch (error) {
 
-        
+
         message.channel.send(`${error}`)
     }
 }
