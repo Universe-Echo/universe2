@@ -18,8 +18,9 @@ client.login(process.env.TOKEN); // env se tken lega direct
 client.on('ready', () => {
   client.users.fetch('673846605920600068', false).then((user) => {
     user.send(`I'm on!`);
+    console.log(`All commands loaded!`)
     console.log(`❤️ ${client.user.tag} is on`)
-    
+    console.log(`Ready on ${client.guilds.cache.size} servers!`);
     let activities = [ `${client.guilds.cache.size} servers`, `${client.channels.cache.size} channels`, `3,407 users` ], i = 0;
 
   setInterval(() => client.user.setActivity(`>help | ${activities[i ++ % activities.length]}`, { type: "WATCHING"}), 5000)
@@ -107,6 +108,7 @@ for (const File of Files) {
     client.commands.set(command.name, command);
     console.log(`✅ Loading command ${command.name}`);
     
+    
 }
 /**const mongooseConnectionString = 'mongodb+srv://echo:echouniverse@universe-bot.s4zfo.mongodb.net/data'
 if (!mongooseConnectionString) return;
@@ -167,6 +169,7 @@ client.on('ready', () => {
   ✅  Loading command warn
   ✅  Loading command weather
   ✅  Loading command whois
-  ❤️  Universe#1567 is on`);
+  ❤️  Universe#1567 is on
+  `);
 })
  
