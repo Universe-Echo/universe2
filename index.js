@@ -107,7 +107,6 @@ for (const File of Files) {
     client.commands.set(command.name, command);
     console.log(`✅ Loading command ${command.name}`);
     
-    
 }
 /**const mongooseConnectionString = 'mongodb+srv://echo:echouniverse@universe-bot.s4zfo.mongodb.net/data'
 if (!mongooseConnectionString) return;
@@ -121,4 +120,53 @@ mongoose
  })
  .then(() => console.log('Connected to Mongodb!'))
  **/
-
+client.on('ready', () => {
+  
+  const Mchannel = client.channels.cache.get('862995142617071616');
+  Mchannel.send(`✅ Loading command 8ball
+  ✅  Loading command aa
+  ✅  Loading command angry
+  ✅  Loading command av
+  ✅  Loading command avatar
+  ✅  Loading command undefined
+  ✅  Loading command ban
+  ✅  Loading command botinfo
+  ✅  Loading command cinfo
+  ✅  Loading command undefined
+  ✅  Loading command emoji
+  ✅  Loading command gaw
+  ✅  Loading command gm
+  ✅  Loading command gn
+  ✅  Loading command help
+  ✅  Loading command fun
+  ✅  Loading command utility
+  ✅  Loading command hug
+  ✅  Loading command kick
+  ✅  Loading command lock
+  ✅  Loading command mc
+  ✅  Loading command membercount
+  ✅  Loading command mute
+  ✅  Loading command nick
+  ✅  Loading command nuke
+  ✅  Loading command pat
+  ✅  Loading command ping
+  ✅  Loading command undefined
+  ✅  Loading command poll
+  ✅  Loading command Puneet=randi
+  ✅  Loading command purge
+  ✅  Loading command role
+  ✅  Loading command roleinfo
+  ✅  Loading command serverinfo
+  ✅  Loading command servers
+  ✅  Loading command tmute
+  ✅  Loading command tops
+  ✅  Loading command unban
+  ✅  Loading command unlock
+  ✅  Loading command unmute
+  ✅  Loading command uptime
+  ✅  Loading command warn
+  ✅  Loading command weather
+  ✅  Loading command whois
+  ❤️  Universe#1567 is on`);
+})
+ 
