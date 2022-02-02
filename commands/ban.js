@@ -12,10 +12,10 @@ module.exports = {
         try {
             const reason = args.slice(1).join('  ') || 'no reason provided'
 
-            if (!args[0]) return message.channel.send('Please tell me a user to ban!');
+            if (!args[0]) return message.channel.send('**Please provide a user to ban!**');
             const banMember = message.mentions.members.first() || await message.guild.members.fetch(args[0]);
-            if (!banMember) return message.channel.send('Please provide a valid member!');
-            if (banMember === message.member) return message.channel.send('You dumb, you cannot BAN yourself');
+            if (!banMember) return message.channel.send('**Please provide a valid member!**');
+            if (banMember === message.member) return message.channel.send('**You dumb, you cannot BAN yourself**');
             if (!banMember.bannable) return message.channel.send('I cant ban that User');
 
             await banMember.send(`You were banned from **${message.guild.name}**\nReason: ${reason || 'no reason provided'}`).catch(() => { })
